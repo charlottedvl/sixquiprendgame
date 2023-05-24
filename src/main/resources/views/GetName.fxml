@@ -10,6 +10,8 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name" />
-   <TextField alignment="CENTER" promptText="Your name" />
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <TextField fx:id="nameField" alignment="CENTER" promptText="Your name"/>
+    </HBox>
     <Button fx:id="changeSceneButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#confirmButtonAction" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #e1b804;" text="Confirm" textFill="WHITE" />
 </VBox>
