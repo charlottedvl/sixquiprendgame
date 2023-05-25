@@ -11,7 +11,7 @@
       <top>
          <HBox prefHeight="75.0" prefWidth="650.0" BorderPane.alignment="CENTER">
             <children>
-               <HBox prefHeight="72.0" prefWidth="354.0" style="-fx-alignment: center;">
+               <HBox fx:id="otherHand" prefHeight="72.0" prefWidth="354.0" style="-fx-alignment: center;">
                   <children>
                      <Pane fx:id="otherHand1" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="63.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
@@ -68,9 +68,9 @@
                      <Insets bottom="5.0" left="100.0" top="5.0" />
                   </HBox.margin>
                </HBox>
-               <Button fx:id="endButton" mnemonicParsing="false" text="Terminer">
+               <Button fx:id="endButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Terminer">
                   <HBox.margin>
-                     <Insets left="75.0" top="25.0" />
+                     <Insets left="110.0" top="10.0" />
                   </HBox.margin>
                </Button>
             </children>
@@ -82,7 +82,7 @@
       <bottom>
          <HBox prefHeight="153.0" prefWidth="779.0" BorderPane.alignment="CENTER">
             <children>
-               <HBox prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
+               <HBox fx:id="hand" prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
                   <children>
                      <Pane fx:id="hand1" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
@@ -170,7 +170,7 @@
             <children>
                <VBox prefHeight="208.0" prefWidth="390.0">
                   <children>
-                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                     <HBox fx:id="stack1" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s1c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
@@ -202,7 +202,7 @@
                            <Insets bottom="7.0" left="50.0" right="20.0" top="2.0" />
                         </VBox.margin>
                      </HBox>
-                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                     <HBox fx:id="stack3" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s3c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
@@ -238,7 +238,7 @@
                </VBox>
                <VBox prefHeight="208.0" prefWidth="396.0">
                   <children>
-                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                     <HBox fx:id="stack2" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s2c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
@@ -270,7 +270,7 @@
                            <Insets bottom="7.0" left="20.0" right="50.0" top="2.0" />
                         </VBox.margin>
                      </HBox>
-                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                     <HBox fx:id="stack4" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s4c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>

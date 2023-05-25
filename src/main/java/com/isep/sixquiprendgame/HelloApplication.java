@@ -24,8 +24,12 @@ public class HelloApplication extends Application {
         game.updateOxHeadNumber(numberOfOxHeads);
         game.showCardsStack(1,2);
         game.showCardsStack(2,4);
-        game.showCardsStack(3,0);//
+        game.showCardsStack(3,4);
         game.showCardsStack(4,3);
+        HumanPlayer player = new HumanPlayer("player");
+        AiPlayer ai = new AiPlayer();
+        game.showCardHand(player, 7);
+        game.showCardHand(ai, 3);
 
 
         Scene scene = new Scene(root, 780, 470);
