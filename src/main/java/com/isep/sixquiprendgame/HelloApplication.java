@@ -19,10 +19,17 @@ public class HelloApplication extends Application {
         Parent root = fxmlLoader.load();
         PlayGame game = fxmlLoader.getController();
 
-        int numberOfOxHeads = 20;
+
+        int numberOfOxHeads = 20; //Je le fais manuellement pour l'instant
         game.updateOxHeadNumber(numberOfOxHeads);
+        game.showCardsStack(1,2);
+        game.showCardsStack(2,4);
+        game.showCardsStack(3,0);
+        game.showCardsStack(4,3);
+
 
         Scene scene = new Scene(root, 780, 470);
+
 
         stage.setTitle("6 qui prend");
         stage.setScene(scene);
