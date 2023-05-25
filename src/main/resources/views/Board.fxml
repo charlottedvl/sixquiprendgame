@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.BoardController">
+   <BorderPane prefHeight="470.0" prefWidth="779.0">
+      <top>
+         <HBox prefHeight="75.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox prefHeight="72.0" prefWidth="354.0" style="-fx-alignment: center;">
+                  <children>
+                     <Pane fx:id="otherHand1" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="63.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand2" layoutX="10.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand3" layoutX="73.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand4" layoutX="137.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand5" layoutX="201.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand6" layoutX="265.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand7" layoutX="329.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand8" layoutX="393.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand9" layoutX="431.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="otherHand10" layoutX="438.0" layoutY="10.0" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="64.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                  </children>
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="100.0" top="5.0" />
+                  </HBox.margin>
+               </HBox>
+               <Button fx:id="endButton" mnemonicParsing="false" text="Terminer">
+                  <HBox.margin>
+                     <Insets left="75.0" top="25.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <BorderPane.margin>
+               <Insets bottom="10.0" left="100.0" top="10.0" />
+            </BorderPane.margin>
+         </HBox>
+      </top>
+      <bottom>
+         <HBox prefHeight="153.0" prefWidth="779.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
+                  <children>
+                     <Pane fx:id="hand1" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand3" layoutX="150.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand4" layoutX="196.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand5" layoutX="220.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand6" layoutX="234.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand7" layoutX="242.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand8" layoutX="250.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand9" layoutX="255.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" right="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                     <Pane fx:id="hand10" layoutX="258.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                        <HBox.margin>
+                           <Insets left="0.5" />
+                        </HBox.margin>
+                     </Pane>
+                  </children>
+                  <HBox.margin>
+                     <Insets bottom="7.0" left="7.0" top="7.0" />
+                  </HBox.margin>
+               </HBox>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="oxHeadNumber" alignment="CENTER" text="0">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets left="10.0" right="15.0" top="20.0" />
+                        </VBox.margin>
+                     </Label>
+                     <ImageView fitHeight="55.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" rotate="11.3">
+                        <image>
+                           <Image url="C://users/marie/images_jeu/6quiprend.png" />
+                        </image>
+                        <VBox.margin>
+                           <Insets left="1.0" />
+                        </VBox.margin>
+                     </ImageView>
+                  </children>
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </VBox>
+            </children>
+         </HBox>
+      </bottom>
+      <center>
+         <HBox prefHeight="188.0" prefWidth="779.0" BorderPane.alignment="CENTER">
+            <children>
+               <VBox prefHeight="208.0" prefWidth="390.0">
+                  <children>
+                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                        <children>
+                           <Pane fx:id="s1c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s1c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s1c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s1c4" layoutX="89.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s1c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                        </children>
+                        <VBox.margin>
+                           <Insets bottom="7.0" left="50.0" right="20.0" top="2.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                        <children>
+                           <Pane fx:id="s3c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s3c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s3c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s3c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s3c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="50.0" right="20.0" top="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                  </children>
+               </VBox>
+               <VBox prefHeight="208.0" prefWidth="396.0">
+                  <children>
+                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                        <children>
+                           <Pane fx:id="s2c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s2c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s2c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s2c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s2c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="78.0" prefWidth="201.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                        </children>
+                        <VBox.margin>
+                           <Insets bottom="7.0" left="20.0" right="50.0" top="2.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                        <children>
+                           <Pane fx:id="s4c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s4c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s4c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s4c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                           <Pane fx:id="s4c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
+                              <HBox.margin>
+                                 <Insets left="0.5" right="0.5" />
+                              </HBox.margin>
+                           </Pane>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="20.0" right="50.0" top="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+      </center>
+   </BorderPane>
+</VBox>

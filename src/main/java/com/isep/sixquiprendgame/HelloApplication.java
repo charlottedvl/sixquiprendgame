@@ -15,9 +15,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Board.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/views/Board.fxml"));
         Parent root = fxmlLoader.load();
-        PlayGame game = fxmlLoader.getController();
+        BoardController game = fxmlLoader.getController();
 
 
         int numberOfOxHeads = 20; //Je le fais manuellement pour l'instant

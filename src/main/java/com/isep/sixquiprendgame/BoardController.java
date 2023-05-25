@@ -3,8 +3,15 @@ package com.isep.sixquiprendgame;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
-public class PlayGame {
+public class BoardController {
+
+    private HumanPlayer player;
+    private AiPlayer ai;
+
+    @FXML
+    private VBox view;
     @FXML
     private Label oxHeadNumber;
     @FXML
@@ -48,10 +55,14 @@ public class PlayGame {
     @FXML
     private Pane s4c5;
 
+    public void showInformation(HumanPlayer player, AiPlayer ai){
+        this.player = player;
+        this.ai = ai;
+    }
+
     public void updateOxHeadNumber(int numberOfOxHeads) {
         oxHeadNumber.setText(Integer.toString(numberOfOxHeads));
     }
-
 
     public void showCardsStack(int stackNumber, int numberOfCardsToShow){
         Pane[] cardPanes = null;
@@ -74,7 +85,4 @@ public class PlayGame {
             cardPanes[card-1].setManaged(false);
         }
     }
-
-
-
 }
