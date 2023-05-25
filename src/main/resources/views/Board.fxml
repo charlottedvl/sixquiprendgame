@@ -188,9 +188,9 @@
                </HBox.margin></Pane>
          </children></HBox>
       <ImageView fitHeight="55.0" fitWidth="45.0" layoutX="540.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" rotate="16.7">
-         <image>
+         <!--<image>
             <Image url="C://users/marie/images_jeu/6quiprend.png" />
-         </image>
+         </image>-->
       </ImageView>
       <Label layoutX="554.0" layoutY="302.0" text="0">
          <font>

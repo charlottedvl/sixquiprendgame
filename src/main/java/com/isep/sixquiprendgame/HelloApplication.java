@@ -19,6 +19,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        Setup setup = new Setup();
+        setup.createCards();
         launch();
     }
 }

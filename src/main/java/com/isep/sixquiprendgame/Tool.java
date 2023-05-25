@@ -13,6 +13,10 @@ public class Tool {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Tool.class.getResource("/views/" + fxmlFile));
             view = (VBox) loader.load();
+
+            // Chercher le controller du board
+            //BoardController boardController = loader.getController();
+            //boardController.showInformation()
             // Remplacement de la vue actuelle par la nouvelle
             Scene scene = new Scene(view);
             // obtenir la scène actuelle
