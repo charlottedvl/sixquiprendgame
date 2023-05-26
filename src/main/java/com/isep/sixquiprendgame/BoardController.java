@@ -6,6 +6,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class BoardController {
 
     private HumanPlayer player;
@@ -15,6 +18,8 @@ public class BoardController {
     private VBox view;
     @FXML
     private Label oxHeadNumber;
+    @FXML
+    private Label oxHeadNumberIa;
     @FXML
     private HBox stack1;
     @FXML
@@ -28,27 +33,38 @@ public class BoardController {
     @FXML
     private HBox otherHand;
 
-    public void showInformation(HumanPlayer player, AiPlayer ai){
+    public void showInformation(HumanPlayer player, AiPlayer ai) {
         this.player = player;
         this.ai = ai;
     }
 
-    public void setOxHeadNumber(int numberOfOxHeads) {
-        oxHeadNumber.setText(Integer.toString(numberOfOxHeads));
+    public void setOxHeadNumber(Player player, int numberOfOxHeads) {
+        Label oxHead = (player instanceof HumanPlayer) ? oxHeadNumber : oxHeadNumberIa;
+        oxHead.setText(Integer.toString(numberOfOxHeads));
     }
 
-    public void showCardsStack(int stackNumber, int numberOfCardsToShow) {
-        HBox stack = getStackByNumber(stackNumber);
-        for (int card = numberOfCardsToShow + 1; card <= 5; card++) {
-            Pane cardPane = (Pane) stack.getChildren().get(card - 1);
+    public void showCardsStack(ArrayList<Card> stack, int stackNumber) {
+        HBox stackHBox = getStackByNumber(stackNumber);
+        for (int i = 0; i < stack.size(); i++) {
+            setCardNumbers(stackHBox, i, stack.get(i).getNumber(), stack.get(i).getOxHead());
+        }
+        for (int i = stack.size(); i < 5; i++) {
+            Pane cardPane = (Pane) stackHBox.getChildren().get(i);
             cardPane.setVisible(false);
             cardPane.setManaged(false);
         }
     }
-    public void showCardHand(Player player, int numberOfCardsToShow) {
+
+    public void showCardHand(Player player) {
         HBox handContainer = (player instanceof HumanPlayer) ? hand : otherHand;
-        for (int card = numberOfCardsToShow + 1; card <= 10; card++) {
-            Pane cardPane = (Pane) handContainer.getChildren().get(card - 1);
+        ArrayList<Card> playerCards = player.getHand();
+        if (handContainer == hand) {
+            for (int i = 0; i < playerCards.size(); i++) {
+                setCardNumbers(handContainer, i, playerCards.get(i).getNumber(), playerCards.get(i).getOxHead());
+            }
+        }
+        for (int i = playerCards.size(); i < 10; i++) {
+            Pane cardPane = (Pane) handContainer.getChildren().get(i);
             cardPane.setVisible(false);
             cardPane.setManaged(false);
         }
@@ -65,8 +81,17 @@ public class BoardController {
             case 4:
                 return stack4;
             default:
-                throw new IllegalArgumentException("Invalid stack number: " + stackNumber);
+                return null;
         }
     }
 
-}
+        public void setCardNumbers (HBox deck,int number, int cardNumber, int oxHeadNumber){
+            Pane card = (Pane) deck.getChildren().get(number);
+            Label cardNumberLabel = (Label) card.getChildren().get(0);
+            cardNumberLabel.setText(Integer.toString(cardNumber));
+            Label oxHeadNumberLabel = (Label) card.getChildren().get(1);
+            oxHeadNumberLabel.setText(Integer.toString(oxHeadNumber));
+        }
+
+    }
+
