@@ -8,7 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class HelloController {
 
@@ -27,6 +28,22 @@ public class HelloController {
         HumanPlayer player = new HumanPlayer(name);
         AiPlayer ai = new AiPlayer();
         Setup setup = new Setup();
+        ArrayList<Card> deck = setup.createCards();
+        setup.distributionCard(player, deck);
+        Collections.sort(player.getHand());
+        System.out.println(player.getHand().get(1).getNumber());
+        System.out.println(player.getHand().get(2).getNumber());
+        System.out.println(player.getHand().get(3).getNumber());
+        System.out.println(player.getHand().get(4).getNumber());
+        System.out.println(player.getHand().get(5).getNumber());
+        System.out.println(player.getHand().get(6).getNumber());
+        System.out.println(player.getHand().get(7).getNumber());
+        System.out.println(player.getHand().get(8).getNumber());
+        System.out.println(player.getHand().get(9).getNumber());
+        System.out.println(player.getHand().get(0).getNumber());
+
+
+        setup.distributionCard(ai, deck);
         try {
             // Chargement de la nouvelle vue
             FXMLLoader loader = new FXMLLoader();
@@ -42,7 +59,6 @@ public class HelloController {
             // afficher la nouvelle scène
             stage.setScene(scene);
             stage.show();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
