@@ -42,8 +42,6 @@ public class HelloController {
         System.out.println(player.getHand().get(8).getNumber());
         System.out.println(player.getHand().get(9).getNumber());
         System.out.println(player.getHand().get(0).getNumber());
-
-
         setup.distributionCard(ai, deck);
         try {
             // Chargement de la nouvelle vue
