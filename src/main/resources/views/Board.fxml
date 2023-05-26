@@ -151,9 +151,9 @@
                            </VBox.margin>
                         </Label>
                         <ImageView fitHeight="55.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" rotate="11.3">
-                           <!--<image>
-                              <Image url="/../../../6quiprend.jpg" />
-                           </image>-->
+                           <image>
+                              <Image url="@../6quiprend.jpg" />
+                           </image>
                            <VBox.margin>
                               <Insets left="1.0" />
                            </VBox.margin>
