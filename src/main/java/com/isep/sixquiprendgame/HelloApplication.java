@@ -23,6 +23,8 @@ public class HelloApplication extends Application {
         HumanPlayer player = new HumanPlayer("player");
         AiPlayer ai = new AiPlayer();
         Board board = new Board();
+        game.setPlayer(player);
+        game.setAi(ai);
 
         player.hand.add(new Card(27, 3));
         player.hand.add(new Card(102, 1));
@@ -38,10 +40,10 @@ public class HelloApplication extends Application {
         ai.hand.add(new Card(45, 0));
         ai.hand.add(new Card(34, 1));
 
-        ArrayList<Card> stack1 = board.getStack1();
-        ArrayList<Card> stack2 = board.getStack2();
-        ArrayList<Card> stack3 = board.getStack3();
-        ArrayList<Card> stack4 = board.getStack4();
+        ArrayList<Card> stack1 = game.getStackOne().getStack();
+        ArrayList<Card> stack2 = game.getStackTwo().getStack();
+        ArrayList<Card> stack3 = game.getStackThree().getStack();
+        ArrayList<Card> stack4 = game.getStackFour().getStack();
 
         stack1.add(new Card(18,6));
         stack1.add(new Card(15,2));
@@ -55,7 +57,7 @@ public class HelloApplication extends Application {
         stack3.add(new Card(18,6));
         stack3.add(new Card(18,6));
         stack3.add(new Card(18,6));
-        stack3.add(new Card(18,6));
+        stack3.add(new Card(19,6));
 
         stack4.add(new Card(18,6));
 

@@ -1,6 +1,7 @@
 package com.isep.sixquiprendgame;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -10,8 +11,6 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import java.util.ArrayList;
 
 
 
@@ -27,6 +26,8 @@ public class BoardController {
     private VBox view;
     @FXML
     private Label oxHeadNumberIa;
+    @FXML
+    private Label oxHeadNumber;
     @FXML
     private HBox stack1;
     @FXML
@@ -53,13 +54,13 @@ public class BoardController {
         this.stackTwo = new Serie(deck);
         this.stackThree = new Serie(deck);
         this.stackFour = new Serie(deck);
-        this.stacks = new ArrayList<Serie>();
+        this.stacks = new ArrayList<>();
         stacks.add(stackOne);
         stacks.add(stackTwo);
         stacks.add(stackThree);
         stacks.add(stackFour);
     }
-    public void showInformation(HumanPlayer player, AiPlayer ai){
+
     public void showInformation(HumanPlayer player, AiPlayer ai) {
         this.player = player;
         this.ai = ai;
@@ -71,6 +72,7 @@ public class BoardController {
     public void setOxHeadNumber(Player player, int numberOfOxHeads) {
         Label oxHead = (player instanceof HumanPlayer) ? oxHeadNumber : oxHeadNumberIa;
         oxHead.setText(Integer.toString(numberOfOxHeads));
+    }
     @FXML
     public void playCard(MouseEvent event) {
         Pane clickedPane = (Pane) event.getSource();
@@ -78,16 +80,24 @@ public class BoardController {
         System.out.println(id);
         String newStr = id.substring(4);
         int number = Integer.parseInt(newStr);
-        System.out.println(number);
         Card card = this.player.getHand().get(number-1);
         System.out.println(card.getNumber());
         this.setCardOnBoard(card, this.player);
+        showCardHand(this.player);
+        showCardHand(this.ai);
+        showCardsStack(this.stackOne.getStack(),1);
+        showCardsStack(this.stackTwo.getStack(),2);
+        showCardsStack(this.stackThree.getStack(),3);
+        showCardsStack(this.stackFour.getStack(),4);
     }
 
     public void showCardsStack(ArrayList<Card> stack, int stackNumber) {
         HBox stackHBox = getStackByNumber(stackNumber);
         for (int i = 0; i < stack.size(); i++) {
-            setCardNumbers(stackHBox, i, stack.get(i).getNumber(), stack.get(i).getOxHead());
+            setCardNumbers(stackHBox, i, stack.get(i));
+            Pane cardPane = (Pane) stackHBox.getChildren().get(i);
+            cardPane.setVisible(true);
+            cardPane.setManaged(true);
         }
         for (int i = stack.size(); i < 5; i++) {
             Pane cardPane = (Pane) stackHBox.getChildren().get(i);
@@ -101,13 +111,16 @@ public class BoardController {
         ArrayList<Card> playerCards = player.getHand();
         if (handContainer == hand) {
             for (int i = 0; i < playerCards.size(); i++) {
-                setCardNumbers(handContainer, i, playerCards.get(i).getNumber(), playerCards.get(i).getOxHead());
+                setCardNumbers(handContainer, i, playerCards.get(i));
             }
         }
         for (int i = playerCards.size(); i < 10; i++) {
             Pane cardPane = (Pane) handContainer.getChildren().get(i);
             cardPane.setVisible(false);
             cardPane.setManaged(false);
+        }
+    }
+
     @FXML
     public void setCardOnBoard(Card card, Player player) {
         int number = card.getNumber();
@@ -129,7 +142,7 @@ public class BoardController {
             System.out.println("inférieur à toutes les cartes");
         } else {
             Serie serie = stacks.get(indexSerie);
-            if (serie.testNumber() == true){
+            if (serie.testNumber()){
                 serie.getStack().add(card);
                 serie.setLastCard(card);
             } else {
@@ -142,7 +155,6 @@ public class BoardController {
         this.player.getHand().remove(card);
     }
 
-    }
 
     private HBox getStackByNumber(int stackNumber) {
         return switch (stackNumber) {
@@ -154,12 +166,13 @@ public class BoardController {
         };
     }
 
-        public void setCardNumbers (HBox deck,int number, int cardNumber, int oxHeadNumber){
-            Pane card = (Pane) deck.getChildren().get(number);
-            Label cardNumberLabel = (Label) card.getChildren().get(0);
-            cardNumberLabel.setText(Integer.toString(cardNumber));
-            Label oxHeadNumberLabel = (Label) card.getChildren().get(1);
-            oxHeadNumberLabel.setText(Integer.toString(oxHeadNumber));
+        public void setCardNumbers (HBox deck,int number, Card card){
+            Pane cardPane = (Pane) deck.getChildren().get(number);
+            Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
+            cardNumberLabel.setText(Integer.toString(card.getNumber()));
+            Label oxHeadNumberLabel = (Label) cardPane.getChildren().get(1);
+            oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));
         }
 
 }
+
