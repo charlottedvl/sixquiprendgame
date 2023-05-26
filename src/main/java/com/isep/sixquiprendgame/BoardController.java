@@ -10,7 +10,8 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+
+
 
 @Getter
 @Setter
@@ -49,7 +50,6 @@ public class BoardController {
         stacks.add(stackTwo);
         stacks.add(stackThree);
         stacks.add(stackFour);
-
     }
     public void showInformation(HumanPlayer player, AiPlayer ai){
         this.player = player;
@@ -63,14 +63,48 @@ public class BoardController {
     public void playCard(MouseEvent event) {
         Pane clickedPane = (Pane) event.getSource();
         String id = clickedPane.getId();
-        int numberIndex = "hand".length();
-        char numberChar = id.charAt(numberIndex);
-        int number = Character.getNumericValue(numberChar);
+        System.out.println(id);
+        String newStr = id.substring(4);
+        int number = Integer.parseInt(newStr);
+        System.out.println(number);
         Card card = this.player.getHand().get(number-1);
-        int value = card.getNumber();
-        int oxHead = card.getOxHead();
-        System.out.println(value);
-        System.out.println(oxHead);
-
+        System.out.println(card.getNumber());
+        this.setCardOnBoard(card, this.player);
     }
+
+    @FXML
+    public void setCardOnBoard(Card card, Player player) {
+        int number = card.getNumber();
+        int indexSerie = -1;
+        int actualSerie = -1;
+        int minimumDifference = Integer.MAX_VALUE;
+        System.out.println("max value " + minimumDifference);
+        for (Serie serie : stacks){
+            actualSerie++;
+            if (number > serie.getLastCard().getNumber()){
+                int difference = Math.abs(number - serie.getLastCard().getNumber());
+                if (difference < minimumDifference) {
+                    minimumDifference = difference;
+                    indexSerie = actualSerie;
+                }
+            }
+        }
+        if (indexSerie == -1) {
+            System.out.println("inférieur à toutes les cartes");
+        } else {
+            Serie serie = stacks.get(indexSerie);
+            if (serie.testNumber() == true){
+                serie.getStack().add(card);
+                serie.setLastCard(card);
+            } else {
+                player.setTotalOxHead(getPlayer().getTotalOxHead() + serie.getTotalHead());
+                serie.getStack().clear();
+                serie.setLastCard(card);
+                serie.getStack().add(card);
+            }
+        }
+        this.player.getHand().remove(card);
+    }
+
+
 }

@@ -27,16 +27,6 @@ public class HelloController {
         HumanPlayer player = new HumanPlayer(name);
         AiPlayer ai = new AiPlayer();
         Setup setup = new Setup();
-        /*System.out.println(player.getHand().get(1).getNumber());
-        System.out.println(player.getHand().get(2).getNumber());
-        System.out.println(player.getHand().get(3).getNumber());
-        System.out.println(player.getHand().get(4).getNumber());
-        System.out.println(player.getHand().get(5).getNumber());
-        System.out.println(player.getHand().get(6).getNumber());
-        System.out.println(player.getHand().get(7).getNumber());
-        System.out.println(player.getHand().get(8).getNumber());
-        System.out.println(player.getHand().get(9).getNumber());
-        System.out.println(player.getHand().get(0).getNumber());*/
         try {
             // Chargement de la nouvelle vue
             FXMLLoader loader = new FXMLLoader();
@@ -52,10 +42,7 @@ public class HelloController {
             // afficher la nouvelle scène
             stage.setScene(scene);
             stage.show();
-            System.out.println(boardController.getStackOne().getLastCard().getNumber());
-            System.out.println(boardController.getStackTwo().getLastCard().getNumber());
-            System.out.println(boardController.getStackThree().getLastCard().getNumber());
-            System.out.println(boardController.getStackFour().getLastCard().getNumber());
+
         } catch (Exception e) {
             e.printStackTrace();
         }

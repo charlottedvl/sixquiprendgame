@@ -23,4 +23,12 @@ public class Serie {
         this.lastCard = stack.get(0);
         this.totalHead = stack.get(0).getOxHead();
     }
+
+    public boolean testNumber () {
+        boolean test = true;
+        if (this.stack.size() == 5){
+            test = false;
+        }
+        return test;
+    }
 }
