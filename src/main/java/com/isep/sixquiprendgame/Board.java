@@ -1,12 +1,10 @@
 package com.isep.sixquiprendgame;
 
-import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 @Getter @Setter
 public class Board {
@@ -18,11 +16,11 @@ public class Board {
     private List<ArrayList> stacks;
 
     public Board() {
-        this.stack1 = new ArrayList<Card>();
-        this.stack2 = new ArrayList<Card>();
-        this.stack3 = new ArrayList<Card>();
-        this.stack4 = new ArrayList<Card>();
-        this.stacks = new ArrayList<ArrayList>();
+        this.stack1 = new ArrayList<>();
+        this.stack2 = new ArrayList<>();
+        this.stack3 = new ArrayList<>();
+        this.stack4 = new ArrayList<>();
+        this.stacks = new ArrayList<>();
         stacks.add(stack1);
         stacks.add(stack2);
         stacks.add(stack3);

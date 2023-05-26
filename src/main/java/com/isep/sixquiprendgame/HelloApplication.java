@@ -1,16 +1,13 @@
 package com.isep.sixquiprendgame;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Stack;
 
 
 public class HelloApplication extends Application {
@@ -41,10 +38,10 @@ public class HelloApplication extends Application {
         ai.hand.add(new Card(45, 0));
         ai.hand.add(new Card(34, 1));
 
-        ArrayList stack1 = board.getStack1();
-        ArrayList stack2 = board.getStack2();
-        ArrayList stack3 = board.getStack3();
-        ArrayList stack4 = board.getStack4();
+        ArrayList<Card> stack1 = board.getStack1();
+        ArrayList<Card> stack2 = board.getStack2();
+        ArrayList<Card> stack3 = board.getStack3();
+        ArrayList<Card> stack4 = board.getStack4();
 
         stack1.add(new Card(18,6));
         stack1.add(new Card(15,2));

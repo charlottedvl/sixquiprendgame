@@ -7,10 +7,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class BoardController {
 
+    public Pane hand6;
     private HumanPlayer player;
     private AiPlayer ai;
 
@@ -71,18 +71,13 @@ public class BoardController {
     }
 
     private HBox getStackByNumber(int stackNumber) {
-        switch (stackNumber) {
-            case 1:
-                return stack1;
-            case 2:
-                return stack2;
-            case 3:
-                return stack3;
-            case 4:
-                return stack4;
-            default:
-                return null;
-        }
+        return switch (stackNumber) {
+            case 1 -> stack1;
+            case 2 -> stack2;
+            case 3 -> stack3;
+            case 4 -> stack4;
+            default -> null;
+        };
     }
 
         public void setCardNumbers (HBox deck,int number, int cardNumber, int oxHeadNumber){

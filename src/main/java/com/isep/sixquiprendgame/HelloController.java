@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class HelloController {
 
@@ -49,7 +48,7 @@ public class HelloController {
             // Chargement de la nouvelle vue
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Tool.class.getResource("/views/Board.fxml"));
-            view = (VBox) loader.load();
+            view = loader.load();
             // Chercher le controller du board
             BoardController boardController = loader.getController();
             boardController.showInformation(player, ai);
