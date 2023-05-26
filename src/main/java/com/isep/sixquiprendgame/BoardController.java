@@ -33,7 +33,7 @@ public class BoardController {
         this.ai = ai;
     }
 
-    public void updateOxHeadNumber(int numberOfOxHeads) {
+    public void setOxHeadNumber(int numberOfOxHeads) {
         oxHeadNumber.setText(Integer.toString(numberOfOxHeads));
     }
 

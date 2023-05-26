@@ -20,16 +20,16 @@ public class HelloApplication extends Application {
         BoardController game = fxmlLoader.getController();
 
 
-        int numberOfOxHeads = 20; //Je le fais manuellement pour l'instant
-        game.updateOxHeadNumber(numberOfOxHeads);
-        game.showCardsStack(1,2);
-        game.showCardsStack(2,4);
-        game.showCardsStack(3,4);
-        game.showCardsStack(4,3);
+        //Je le fais manuellement pour l'instant
+        game.setOxHeadNumber(49);
+        game.showCardsStack(1,5);
+        game.showCardsStack(2,5);
+        game.showCardsStack(3,5);
+        game.showCardsStack(4,5);
         HumanPlayer player = new HumanPlayer("player");
         AiPlayer ai = new AiPlayer();
-        game.showCardHand(player, 7);
-        game.showCardHand(ai, 3);
+        game.showCardHand(player, 10);
+        game.showCardHand(ai, 10);
 
 
         Scene scene = new Scene(root, 780, 470);
