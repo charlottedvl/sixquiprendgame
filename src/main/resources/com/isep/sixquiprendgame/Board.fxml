@@ -6,12 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.BoardController">
+<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.PlayGame">
    <BorderPane prefHeight="470.0" prefWidth="779.0">
       <top>
          <HBox prefHeight="75.0" prefWidth="650.0" BorderPane.alignment="CENTER">
             <children>
-               <HBox fx:id="otherHand" prefHeight="72.0" prefWidth="354.0" style="-fx-alignment: center;">
+               <HBox prefHeight="72.0" prefWidth="354.0" style="-fx-alignment: center;">
                   <children>
                      <Pane fx:id="otherHand1" maxHeight="65.0" maxWidth="30.0" prefHeight="104.0" prefWidth="63.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
@@ -68,9 +68,9 @@
                      <Insets bottom="5.0" left="100.0" top="5.0" />
                   </HBox.margin>
                </HBox>
-               <Button fx:id="endButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Terminer">
+               <Button fx:id="endButton" mnemonicParsing="false" text="Terminer">
                   <HBox.margin>
-                     <Insets left="110.0" top="10.0" />
+                     <Insets left="75.0" top="25.0" />
                   </HBox.margin>
                </Button>
             </children>
@@ -82,127 +82,57 @@
       <bottom>
          <HBox prefHeight="153.0" prefWidth="779.0" BorderPane.alignment="CENTER">
             <children>
-               <HBox fx:id="hand" prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
+               <HBox prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
                   <children>
                      <Pane fx:id="hand1" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand3" layoutX="150.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand4" layoutX="196.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand5" layoutX="220.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand6" layoutX="234.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand7" layoutX="242.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand8" layoutX="250.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand9" layoutX="255.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                      <Pane fx:id="hand10" layoutX="258.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" />
                         </HBox.margin>
-                        <children>
-                           <Label layoutX="6.0" layoutY="14.0" text="Num">
-                              <font>
-                                 <Font size="24.0" />
-                              </font></Label>
-                           <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
-                        </children>
                      </Pane>
                   </children>
                   <HBox.margin>
@@ -221,7 +151,7 @@
                      </Label>
                      <ImageView fitHeight="55.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" rotate="11.3">
                         <image>
-                           <Image url="@../6quiprend.png" />
+                           <Image url="C://users/marie/images_jeu/6quiprend.png" />
                         </image>
                         <VBox.margin>
                            <Insets left="1.0" />
@@ -240,134 +170,64 @@
             <children>
                <VBox prefHeight="208.0" prefWidth="390.0">
                   <children>
-                     <HBox fx:id="stack1" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s1c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s1c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s1c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s1c4" layoutX="89.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s1c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                         </children>
                         <VBox.margin>
                            <Insets bottom="7.0" left="50.0" right="20.0" top="2.0" />
                         </VBox.margin>
                      </HBox>
-                     <HBox fx:id="stack3" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
+                     <HBox prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s3c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s3c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s3c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s3c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s3c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                         </children>
                         <VBox.margin>
@@ -378,134 +238,64 @@
                </VBox>
                <VBox prefHeight="208.0" prefWidth="396.0">
                   <children>
-                     <HBox fx:id="stack2" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s2c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s2c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s2c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s2c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s2c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="78.0" prefWidth="201.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                         </children>
                         <VBox.margin>
                            <Insets bottom="7.0" left="20.0" right="50.0" top="2.0" />
                         </VBox.margin>
                      </HBox>
-                     <HBox fx:id="stack4" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
+                     <HBox prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                         <children>
                            <Pane fx:id="s4c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s4c2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s4c3" layoutX="128.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s4c4" layoutX="168.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                            <Pane fx:id="s4c5" layoutX="187.0" layoutY="10.0" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                               <HBox.margin>
                                  <Insets left="0.5" right="0.5" />
                               </HBox.margin>
-                              <children>
-                                 <Label layoutX="3.0" layoutY="8.0" text="Num">
-                                    <font>
-                                       <Font size="24.0" />
-                                    </font></Label>
-                                 <Label layoutX="12.0" layoutY="58.0" text="Boeufs" />
-                              </children>
                            </Pane>
                         </children>
                         <VBox.margin>
