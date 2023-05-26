@@ -1,5 +1,7 @@
 package com.isep.sixquiprendgame;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +9,7 @@ import lombok.Setter;
 public class Card implements Comparable<Object> {
     private int number;
     private int oxHead;
+
 
     public Card(int number, int oxHead){
         this.number = number;
