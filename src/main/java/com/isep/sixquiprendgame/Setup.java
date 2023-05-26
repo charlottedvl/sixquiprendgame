@@ -17,7 +17,7 @@ public class Setup {
     }
 
     public ArrayList<Card> createCards() {
-        ArrayList<Card> stacks = new ArrayList<>();
+        ArrayList<Card> deck = new ArrayList<>();
         for (int i = 1; i < 105; i++) {
             Card card = new Card(i, 1);
             if (i == 55) {
@@ -29,21 +29,21 @@ public class Setup {
             } else if (i % 5 == 0) {
                 card.setOxHead(2);
             }
-            stacks.add(card);
+            deck.add(card);
         }
-        return stacks;
+        return deck;
     }
 
 
     // Fonction pour distribuer les cartes au début
-    public void distributionCard(Player player, ArrayList<Card> stacks){
+    public void distributionCard(Player player, ArrayList<Card> deck){
         int numberHand = 0; // At first, the players don't have any card
         int index = 0;
         Random random = new Random();
         while (numberHand != 10) {
-            index = random.nextInt(stacks.size());
-            player.getHand().add(stacks.get(index));
-            stacks.remove(index);
+            index = random.nextInt(deck.size());
+            player.getHand().add(deck.get(index));
+            deck.remove(index);
             numberHand++;
         }
     }

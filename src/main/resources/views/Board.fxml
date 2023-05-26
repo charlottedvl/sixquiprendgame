@@ -84,7 +84,7 @@
             <children>
                <HBox fx:id="hand" prefHeight="140.0" prefWidth="734.0" style="-fx-alignment: center;">
                   <children>
-                     <Pane fx:id="hand1" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand1" maxHeight="139.0" maxWidth="67.0" onMouseClicked="#playCard" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets right="0.5" />
                         </HBox.margin>
@@ -96,7 +96,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="139.0" maxWidth="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="139.0" maxWidth="67.0" onMouseClicked="#playCard" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -108,7 +108,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand3" layoutX="150.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand3" layoutX="150.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -120,7 +120,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand4" layoutX="196.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand4" layoutX="196.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -132,7 +132,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand5" layoutX="220.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand5" layoutX="220.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -144,7 +144,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand6" layoutX="234.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand6" layoutX="234.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -156,7 +156,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand7" layoutX="242.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand7" layoutX="242.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -168,7 +168,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand8" layoutX="250.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand8" layoutX="250.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -180,7 +180,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand9" layoutX="255.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand9" layoutX="255.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" right="0.5" />
                         </HBox.margin>
@@ -192,7 +192,7 @@
                            <Label layoutX="15.0" layoutY="82.0" text="Boeufs" />
                         </children>
                      </Pane>
-                     <Pane fx:id="hand10" layoutX="258.0" layoutY="10.0" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
+                     <Pane fx:id="hand10" layoutX="258.0" layoutY="10.0" onMouseClicked="#playCard" prefHeight="139.0" prefWidth="67.0" style="-fx-background-color: pink; -fx-border-style: solid; -fx-border-radius: 3;">
                         <HBox.margin>
                            <Insets left="0.5" />
                         </HBox.margin>
