@@ -2,6 +2,7 @@ package com.isep.sixquiprendgame;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -96,12 +97,12 @@ public class BoardController {
         }
     }
 
-    public void showCardHand(Player player) {
+    public void showCardHand (Player player) {
         HBox handContainer = (player instanceof HumanPlayer) ? hand : otherHand;
         ArrayList<Card> playerCards = player.getHand();
         if (handContainer == hand) {
             for (int i = 0; i < playerCards.size(); i++) {
-                setCardNumbers(handContainer, i, playerCards.get(i).getNumber(), playerCards.get(i).getOxHead());
+                setCardNumbers(handContainer, i+1, playerCards.get(i).getNumber(), playerCards.get(i).getOxHead());
             }
         }
         for (int i = playerCards.size(); i < 10; i++) {
@@ -121,7 +122,7 @@ public class BoardController {
         };
     }
 
-        public void setCardNumbers (HBox deck,int number, int cardNumber, int oxHeadNumber){
+        public void setCardNumbers (HBox deck, int number, int cardNumber, int oxHeadNumber){
             Pane card = (Pane) deck.getChildren().get(number);
             Label cardNumberLabel = (Label) card.getChildren().get(0);
             cardNumberLabel.setText(Integer.toString(cardNumber));
@@ -135,7 +136,6 @@ public class BoardController {
         int indexSerie = -1;
         int actualSerie = -1;
         int minimumDifference = Integer.MAX_VALUE;
-        System.out.println("max value " + minimumDifference);
         for (Serie serie : stacks){
             actualSerie++;
             if (number > serie.getLastCard().getNumber()){
@@ -158,6 +158,7 @@ public class BoardController {
                 serie.getStack().clear();
                 serie.setLastCard(card);
                 serie.getStack().add(card);
+                setOxHeadNumber(getPlayer(), getPlayer().getTotalOxHead() + serie.getTotalHead());
             }
         }
         this.player.getHand().remove(card);

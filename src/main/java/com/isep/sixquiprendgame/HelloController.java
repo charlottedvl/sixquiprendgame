@@ -41,8 +41,6 @@ public class HelloController {
         System.out.println(player.getHand().get(8).getNumber());
         System.out.println(player.getHand().get(9).getNumber());
         System.out.println(player.getHand().get(0).getNumber());
-
-
         setup.distributionCard(ai, deck);
         try {
             // Chargement de la nouvelle vue
@@ -59,6 +57,11 @@ public class HelloController {
             // afficher la nouvelle scène
             stage.setScene(scene);
             stage.show();
+            boardController.showCardHand(boardController.getPlayer());
+            boardController.showCardsStack(boardController.getStackOne().getStack(), 1);
+            boardController.showCardsStack(boardController.getStackTwo().getStack(), 2);
+            boardController.showCardsStack(boardController.getStackThree().getStack(), 3);
+            boardController.showCardsStack(boardController.getStackFour().getStack(), 4);
         } catch (Exception e) {
             e.printStackTrace();
         }
