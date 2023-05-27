@@ -64,9 +64,9 @@ public class BoardController {
     public void showInformation(HumanPlayer player, AiPlayer ai) {
         this.player = player;
         this.ai = ai;
-        setup.distributionCard(player, deck);
-        Collections.sort(player.getHand());
-        setup.distributionCard(ai, deck);
+        //setup.distributionCard(player, deck); Déjà dans le HelloController (il faut choisir entre les 2)
+        //Collections.sort(player.getHand());
+        //setup.distributionCard(ai, deck);
     }
 
     public void setOxHeadNumber(Player player, int numberOfOxHeads) {
@@ -80,15 +80,15 @@ public class BoardController {
         System.out.println(id);
         String newStr = id.substring(4);
         int number = Integer.parseInt(newStr);
-        Card card = this.player.getHand().get(number-1);
-        System.out.println(card.getNumber());
-        this.setCardOnBoard(card, this.player);
-        showCardHand(this.player);
-        showCardHand(this.ai);
-        showCardsStack(this.stackOne.getStack(),1);
-        showCardsStack(this.stackTwo.getStack(),2);
-        showCardsStack(this.stackThree.getStack(),3);
-        showCardsStack(this.stackFour.getStack(),4);
+            Card card = this.player.getHand().get(number - 1);
+            System.out.println(card.getNumber());
+            this.setCardOnBoard(card, this.player);
+            showCardHand(this.player);
+            showCardHand(this.ai);
+            showCardsStack(this.stackOne.getStack(), 1);
+            showCardsStack(this.stackTwo.getStack(), 2);
+            showCardsStack(this.stackThree.getStack(), 3);
+            showCardsStack(this.stackFour.getStack(), 4);
     }
 
     public void showCardsStack(ArrayList<Card> stack, int stackNumber) {
@@ -145,11 +145,14 @@ public class BoardController {
             if (serie.testNumber()){
                 serie.getStack().add(card);
                 serie.setLastCard(card);
+                serie.setTotalHead(serie.getTotalHead()+card.getOxHead());
             } else {
                 player.setTotalOxHead(getPlayer().getTotalOxHead() + serie.getTotalHead());
+                setOxHeadNumber(player,player.getTotalOxHead());
                 serie.getStack().clear();
                 serie.setLastCard(card);
                 serie.getStack().add(card);
+                serie.setTotalHead(card.getOxHead());
             }
         }
         this.player.getHand().remove(card);
@@ -167,11 +170,11 @@ public class BoardController {
     }
 
         public void setCardNumbers (HBox deck,int number, Card card){
-            Pane cardPane = (Pane) deck.getChildren().get(number);
-            Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
-            cardNumberLabel.setText(Integer.toString(card.getNumber()));
-            Label oxHeadNumberLabel = (Label) cardPane.getChildren().get(1);
-            oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));
+                Pane cardPane = (Pane) deck.getChildren().get(number);
+                Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
+                cardNumberLabel.setText(Integer.toString(card.getNumber()));
+                Label oxHeadNumberLabel = (Label) cardPane.getChildren().get(1);
+                oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));
         }
 
 }

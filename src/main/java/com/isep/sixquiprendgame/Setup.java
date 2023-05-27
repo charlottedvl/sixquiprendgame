@@ -47,7 +47,4 @@ public class Setup {
             numberHand++;
         }
     }
-
-
-    // Fonction pour savoir c'est le tour de qui à chque fois?
 }
