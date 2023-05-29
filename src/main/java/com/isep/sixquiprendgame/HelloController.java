@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class HelloController {
+public class HelloController extends Controller {
 
     @FXML
     private Button changeSceneButton;
@@ -19,48 +19,14 @@ public class HelloController {
     @FXML
     private TextField nameField;
 
-    @FXML
-    private VBox view;
 
     @FXML
     protected void handleButtonAction() {
         String name = nameField.getText();
         HumanPlayer player = new HumanPlayer(name);
         AiPlayer ai = new AiPlayer();
-
-        /*
-        System.out.println(player.getHand().get(0).getNumber());
-        System.out.println(player.getHand().get(1).getNumber());
-        System.out.println(player.getHand().get(2).getNumber());
-        System.out.println(player.getHand().get(3).getNumber());
-        System.out.println(player.getHand().get(4).getNumber());
-        System.out.println(player.getHand().get(5).getNumber());
-        System.out.println(player.getHand().get(6).getNumber());
-        System.out.println(player.getHand().get(7).getNumber());
-        System.out.println(player.getHand().get(8).getNumber());
-        System.out.println(player.getHand().get(9).getNumber());
-        */
-
-        try {
-            // Chargement de la nouvelle vue
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Tool.class.getResource("/views/Board.fxml"));
-            view = (VBox) loader.load();
-            // Chercher le controller du board
-            BoardController boardController = loader.getController();
-            // Remplacement de la vue actuelle par la nouvelle
-            Scene scene = new Scene(view);
-            // obtenir la scène actuelle
-            Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-            boardController.setStage(stage);
-            // afficher la nouvelle scène
-            stage.setScene(scene);
-            stage.show();
-
-            boardController.initiateGame(player, ai);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) changeSceneButton.getScene().getWindow();
+        Controller controller = Controller.load("/views/Board.fxml", stage, player, ai);
     }
 
 

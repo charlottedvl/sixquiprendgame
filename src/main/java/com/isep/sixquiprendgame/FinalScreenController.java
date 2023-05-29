@@ -13,12 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FinalScreenController {
-    @FXML
-    private VBox view;
+public class FinalScreenController extends Controller {
 
-    private HumanPlayer player;
-    private AiPlayer ai;
     @FXML
     private TableView <Player> tableView;
     @FXML

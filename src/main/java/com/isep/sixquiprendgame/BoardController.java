@@ -23,14 +23,11 @@ import java.util.Random;
 
 @Getter
 @Setter
-public class BoardController {
+public class BoardController extends Controller {
 
     private Setup setup;
-    private HumanPlayer player;
-    private AiPlayer ai;
+
     private ArrayList<Card> deck;
-    @FXML
-    private VBox view;
     @FXML
     private Label oxHeadNumberIa;
     @FXML
@@ -47,8 +44,6 @@ public class BoardController {
     private HBox hand;
     @FXML
     private HBox otherHand;
-    @FXML
-    private Stage stage;
     private ArrayList<Serie> stacks;
 
     public BoardController() {
@@ -65,24 +60,27 @@ public class BoardController {
         stacks.add(stackFour);
     }
 
-    public void initiateGame(HumanPlayer player, AiPlayer ai) {
+    public void initiateGame(HumanPlayer player, AiPlayer ai, Stage stage) {
         Setup setup = this.setup;
         ArrayList<Card> deck = this.getDeck();
         setup.distributionCard(player, deck);
         Collections.sort(player.getHand());
         setup.distributionCard(ai, deck);
 
-        this.showInformation(player, ai);
+        this.showInformation(player, ai, stage);
         this.showCardHand(this.getPlayer());
         this.showCardsStack(this.getStacks().get(0).getStack(), 1);
         this.showCardsStack(this.getStacks().get(1).getStack(), 2);
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
         this.showCardsStack(this.getStacks().get(3).getStack(), 4);
+        this.setOxHeadNumber(player, player.getTotalOxHead());
+        this.setOxHeadNumber(ai, ai.getTotalOxHead());
     }
 
-    public void showInformation(HumanPlayer player, AiPlayer ai) {
+    public void showInformation(HumanPlayer player, AiPlayer ai, Stage stage) {
         this.player = player;
         this.ai = ai;
+        this.stage = stage;
         //setup.distributionCard(player, deck); Déjà dans le HelloController (il faut choisir entre les 2)
         //Collections.sort(player.getHand());
         //setup.distributionCard(ai, deck);
@@ -149,7 +147,6 @@ public class BoardController {
         int indexSerie = -1;
         int actualSerie = -1;
         int minimumDifference = Integer.MAX_VALUE;
-        System.out.println("max value " + minimumDifference);
         for (Serie serie : stacks){
             actualSerie++;
             if (number > serie.getLastCard().getNumber()){
@@ -286,7 +283,9 @@ public class BoardController {
             Optional<ButtonType> result = alert.showAndWait();
             result.ifPresent(buttonType -> {
                 if (buttonType == buttonTypeYes) {
-                    initiateGame(player, ai);
+                    HumanPlayer player = this.player;
+                    AiPlayer ai = this.ai;
+                    Controller.load("/views/Board.fxml", this.stage, player, ai);
                 } else if (buttonType == buttonTypeNo) {
                     endGame();
                 }
@@ -296,25 +295,7 @@ public class BoardController {
         }
     }
     public void endGame() {
-        try {
-            // Chargement de la nouvelle vue
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Tool.class.getResource("/views/FinalScreen.fxml"));
-            view = (VBox) loader.load();
-            // Chercher le controller du board
-            FinalScreenController controller = loader.getController();
-            // Remplacement de la vue actuelle par la nouvelle
-            Scene scene = new Scene(view);
-            // Afficher la nouvelle scène sur le stage
-            stage.setScene(scene);
-            stage.show();
-
-            controller.showInformation(player, ai);
-            controller.setClassement();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Controller.load("/views/FinalScreen.fxml", stage, this.player, this.ai);
     }
 }
 
