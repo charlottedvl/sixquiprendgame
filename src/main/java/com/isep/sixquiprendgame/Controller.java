@@ -25,12 +25,15 @@ public abstract class Controller {
         try {
             // Chargement de la nouvelle vue
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Tool.class.getResource(fxmlFile));
+            loader.setLocation(Controller.class.getResource(fxmlFile));
             VBox view = (VBox) loader.load();
             // Chercher le controller du board
             controller = loader.getController();
+            controller.showInformation(player, ai, stage);
             if (controller instanceof BoardController) {
                 ((BoardController) controller).initiateGame(player, ai, stage);
+            } else if (controller instanceof FinalScreenController){
+                ((FinalScreenController) controller).setClassement();
             }
             // Remplacement de la vue actuelle par la nouvelle
             Scene scene = new Scene(view);
@@ -44,6 +47,12 @@ public abstract class Controller {
         controller.setAi(ai);
         controller.setStage(stage);
         return controller;
+    }
+
+    public void showInformation(HumanPlayer player, AiPlayer ai, Stage stage) {
+        this.player = player;
+        this.ai = ai;
+        this.stage = stage;
     }
 }
 

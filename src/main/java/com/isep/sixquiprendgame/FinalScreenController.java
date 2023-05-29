@@ -27,10 +27,6 @@ public class FinalScreenController extends Controller {
     private Text congratText;
 
 
-    public void showInformation(HumanPlayer player, AiPlayer ai) {
-        this.player = player;
-        this.ai = ai;
-    }
 
     public void setClassement() {
         ArrayList<Player> data = new ArrayList<>();

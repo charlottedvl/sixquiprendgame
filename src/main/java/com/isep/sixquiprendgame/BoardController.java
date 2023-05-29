@@ -67,7 +67,6 @@ public class BoardController extends Controller {
         Collections.sort(player.getHand());
         setup.distributionCard(ai, deck);
 
-        this.showInformation(player, ai, stage);
         this.showCardHand(this.getPlayer());
         this.showCardsStack(this.getStacks().get(0).getStack(), 1);
         this.showCardsStack(this.getStacks().get(1).getStack(), 2);
@@ -77,14 +76,6 @@ public class BoardController extends Controller {
         this.setOxHeadNumber(ai, ai.getTotalOxHead());
     }
 
-    public void showInformation(HumanPlayer player, AiPlayer ai, Stage stage) {
-        this.player = player;
-        this.ai = ai;
-        this.stage = stage;
-        //setup.distributionCard(player, deck); Déjà dans le HelloController (il faut choisir entre les 2)
-        //Collections.sort(player.getHand());
-        //setup.distributionCard(ai, deck);
-    }
 
     public void setOxHeadNumber(Player player, int numberOfOxHeads) {
         Label oxHead = (player instanceof HumanPlayer) ? oxHeadNumber : oxHeadNumberIa;
