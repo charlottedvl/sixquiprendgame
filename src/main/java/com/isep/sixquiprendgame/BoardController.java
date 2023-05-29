@@ -47,6 +47,8 @@ public class BoardController {
     private HBox hand;
     @FXML
     private HBox otherHand;
+    @FXML
+    private Stage stage;
     private ArrayList<Serie> stacks;
 
     public BoardController() {
@@ -61,6 +63,21 @@ public class BoardController {
         stacks.add(stackTwo);
         stacks.add(stackThree);
         stacks.add(stackFour);
+    }
+
+    public void initiateGame(HumanPlayer player, AiPlayer ai) {
+        Setup setup = this.setup;
+        ArrayList<Card> deck = this.getDeck();
+        setup.distributionCard(player, deck);
+        Collections.sort(player.getHand());
+        setup.distributionCard(ai, deck);
+
+        this.showInformation(player, ai);
+        this.showCardHand(this.getPlayer());
+        this.showCardsStack(this.getStacks().get(0).getStack(), 1);
+        this.showCardsStack(this.getStacks().get(1).getStack(), 2);
+        this.showCardsStack(this.getStacks().get(2).getStack(), 3);
+        this.showCardsStack(this.getStacks().get(3).getStack(), 4);
     }
 
     public void showInformation(HumanPlayer player, AiPlayer ai) {
@@ -253,30 +270,30 @@ public class BoardController {
     }
 
     public void newPlay() {
-        // Afficher une boîte de dialogue demandant au joueur s'il veut jouer une autre manche
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Fin du jeu");
-        alert.setHeaderText("La partie est terminée.");
-        alert.setContentText("Voulez-vous jouer une autre manche ?");
+        if (this.player.getTotalOxHead() < 66 && this.ai.getTotalOxHead() < 66) {
+            // Afficher une boîte de dialogue demandant au joueur s'il veut jouer une autre manche
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Fin du jeu");
+            alert.setHeaderText("La partie est terminée.");
+            alert.setContentText("Voulez-vous jouer une autre manche ?");
 
-        // Ajouter les boutons "Oui" et "Non" à la boîte de dialogue
-        ButtonType buttonTypeYes = new ButtonType("Oui");
-        ButtonType buttonTypeNo = new ButtonType("Non");
-        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+            // Ajouter les boutons "Oui" et "Non" à la boîte de dialogue
+            ButtonType buttonTypeYes = new ButtonType("Oui");
+            ButtonType buttonTypeNo = new ButtonType("Non");
+            alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
 
-        // Attendre la réponse du joueur
-        Optional<ButtonType> result = alert.showAndWait();
-        result.ifPresent(buttonType -> {
-            if (buttonType == buttonTypeYes) {
-                // L'utilisateur a choisi de jouer une autre manche
-                // Réinitialiser le jeu et effectuer les actions nécessaires
-                // ...
-            } else if (buttonType == buttonTypeNo) {
-                // L'utilisateur a choisi de ne pas jouer une autre manche
-                // Effectuer les actions nécessaires pour terminer l'application ou retourner à l'écran principal
-                // ...
-            }
-        });
+            // Attendre la réponse du joueur
+            Optional<ButtonType> result = alert.showAndWait();
+            result.ifPresent(buttonType -> {
+                if (buttonType == buttonTypeYes) {
+                    initiateGame(player, ai);
+                } else if (buttonType == buttonTypeNo) {
+                    endGame();
+                }
+            });
+        } else {
+            endGame();
+        }
     }
     public void endGame() {
         try {
@@ -288,13 +305,12 @@ public class BoardController {
             FinalScreenController controller = loader.getController();
             // Remplacement de la vue actuelle par la nouvelle
             Scene scene = new Scene(view);
-            // obtenir la scène actuelle
-            Stage stage = (Stage) this.view.getScene().getWindow();
-            // afficher la nouvelle scène
+            // Afficher la nouvelle scène sur le stage
             stage.setScene(scene);
             stage.show();
 
             controller.showInformation(player, ai);
+            controller.setClassement();
 
         } catch (Exception e) {
             e.printStackTrace();

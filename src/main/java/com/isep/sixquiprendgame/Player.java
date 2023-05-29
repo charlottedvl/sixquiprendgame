@@ -10,5 +10,7 @@ public abstract class Player {
     protected ArrayList<Card> hand;
     protected int totalOxHead;
 
+    protected int ranking;
+
 
 }

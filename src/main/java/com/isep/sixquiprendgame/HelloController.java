@@ -27,7 +27,6 @@ public class HelloController {
         String name = nameField.getText();
         HumanPlayer player = new HumanPlayer(name);
         AiPlayer ai = new AiPlayer();
-        Setup setup = new Setup();
 
         /*
         System.out.println(player.getHand().get(0).getNumber());
@@ -53,26 +52,18 @@ public class HelloController {
             Scene scene = new Scene(view);
             // obtenir la scène actuelle
             Stage stage = (Stage) changeSceneButton.getScene().getWindow();
+            boardController.setStage(stage);
             // afficher la nouvelle scène
             stage.setScene(scene);
             stage.show();
 
-            ArrayList<Card> deck = boardController.getDeck();
-            setup.distributionCard(player, deck);
-            Collections.sort(player.getHand());
-            setup.distributionCard(ai, deck);
-
-            boardController.showInformation(player, ai);
-            boardController.showCardHand(boardController.getPlayer());
-            boardController.showCardsStack(boardController.getStacks().get(0).getStack(), 1);
-            boardController.showCardsStack(boardController.getStacks().get(1).getStack(), 2);
-            boardController.showCardsStack(boardController.getStacks().get(2).getStack(), 3);
-            boardController.showCardsStack(boardController.getStacks().get(3).getStack(), 4);
-
+            boardController.initiateGame(player, ai);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     @FXML
     protected void onHelloButtonMouseEntered() {
