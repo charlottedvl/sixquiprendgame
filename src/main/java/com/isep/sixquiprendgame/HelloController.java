@@ -64,10 +64,10 @@ public class HelloController {
 
             boardController.showInformation(player, ai);
             boardController.showCardHand(boardController.getPlayer());
-            boardController.showCardsStack(boardController.getStackOne().getStack(), 1);
-            boardController.showCardsStack(boardController.getStackTwo().getStack(), 2);
-            boardController.showCardsStack(boardController.getStackThree().getStack(), 3);
-            boardController.showCardsStack(boardController.getStackFour().getStack(), 4);
+            boardController.showCardsStack(boardController.getStacks().get(0).getStack(), 1);
+            boardController.showCardsStack(boardController.getStacks().get(1).getStack(), 2);
+            boardController.showCardsStack(boardController.getStacks().get(2).getStack(), 3);
+            boardController.showCardsStack(boardController.getStacks().get(3).getStack(), 4);
 
         } catch (Exception e) {
             e.printStackTrace();
