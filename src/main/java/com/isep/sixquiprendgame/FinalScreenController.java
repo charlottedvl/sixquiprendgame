@@ -39,7 +39,7 @@ public class FinalScreenController extends Controller {
             this.congratText.setText("Ooh, too bad ! The ai defeated you");
         } else if (this.player.getTotalOxHead() == this.ai.getTotalOxHead()) {
             this.ai.setRanking(1);
-            this.congratText.setText("You half win... and hal loose !");
+            this.congratText.setText("You half win... and half loose !");
         }
         data.add(player);
         data.add(ai);

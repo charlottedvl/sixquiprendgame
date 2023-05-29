@@ -64,7 +64,6 @@ public class BoardController extends Controller {
         Setup setup = this.setup;
         ArrayList<Card> deck = this.getDeck();
         setup.distributionCard(player, deck);
-        Collections.sort(player.getHand());
         setup.distributionCard(ai, deck);
 
         this.showCardHand(this.getPlayer());
@@ -134,20 +133,8 @@ public class BoardController extends Controller {
 
     @FXML
     public void setCardOnBoard(Card card, Player player) {
-        int number = card.getNumber();
-        int indexSerie = -1;
-        int actualSerie = -1;
-        int minimumDifference = Integer.MAX_VALUE;
-        for (Serie serie : stacks){
-            actualSerie++;
-            if (number > serie.getLastCard().getNumber()){
-                int difference = Math.abs(number - serie.getLastCard().getNumber());
-                if (difference < minimumDifference) {
-                    minimumDifference = difference;
-                    indexSerie = actualSerie;
-                }
-            }
-        }
+
+        int indexSerie = getMinimumStack(card);
         if (indexSerie == -1 && player instanceof HumanPlayer) {
             chooseStackToTake(player, card);
         } else if (indexSerie == -1 && player instanceof AiPlayer){
@@ -163,6 +150,24 @@ public class BoardController extends Controller {
             }
         }
         this.player.getHand().remove(card);
+    }
+
+    public int getMinimumStack(Card card){
+        int number = card.getNumber();
+        int indexSerie = -1;
+        int actualSerie = -1;
+        int minimumDifference = Integer.MAX_VALUE;
+        for (Serie serie : stacks){
+            actualSerie++;
+            if (number > serie.getLastCard().getNumber()){
+                int difference = Math.abs(number - serie.getLastCard().getNumber());
+                if (difference < minimumDifference) {
+                    minimumDifference = difference;
+                    indexSerie = actualSerie;
+                }
+            }
+        }
+        return indexSerie;
     }
 
 
@@ -229,11 +234,87 @@ public class BoardController extends Controller {
         };
     }
 
-    public Card aiPlays() {
-        Random random = new Random();
-        Card card = this.ai.getHand().get(random.nextInt(this.ai.getHand().size()));
-        this.ai.getHand().remove(card);
-        return card;
+    public Card aiPlays() { //repère
+
+        for (Card card: this.ai.getHand()){ // suppr
+            System.out.println(card.getNumber() + "  -  " + evaluateCard(card));
+        }
+        int size = this.ai.getHand().size();
+        ArrayList<Integer> evaluation= new ArrayList<>();
+        for (int i=0;i<size; i++ ){
+            Card card = this.ai.getHand().get(i);
+            evaluation.add(evaluateCard(card));
+        }
+        int index = evaluation.indexOf(Collections.max(evaluation));
+        Card cardToPlay = this.ai.getHand().get(index);
+        this.ai.getHand().remove(cardToPlay);
+
+        System.out.println("carte choisie " + cardToPlay.getNumber());
+        return cardToPlay;
+    }
+
+    public int evaluateCard(Card card) {
+        int value = 0;
+        int indexSerie = getMinimumStack(card);
+        if (indexSerie<0){
+            value = - (10 + card.getNumber());
+        } else {
+            Serie serie = stacks.get(indexSerie);
+            int difference = card.getNumber() - serie.getLastCard().getNumber();
+            int stackSize = serie.getStack().size();
+            if (difference == 1) {
+                value = 100;
+            } else if (difference <5) {
+                value = switch (stackSize) {
+                    case 1 -> 95;
+                    case 2 -> 90;
+                    case 3 -> 80;
+                    case 4 -> 70;
+                    default -> value;
+                };
+            } else if(difference < 15) {
+                value = switch (stackSize) {
+                    case 1 -> 90;
+                    case 2 -> 80;
+                    case 3 -> 70;
+                    case 4 -> 55;
+                    default -> value;
+                };
+            } else if(difference < 30) {
+                value = switch (stackSize) {
+                    case 1 -> 80;
+                    case 2 -> 70;
+                    case 3 -> 60;
+                    case 4 -> 40;
+                    default -> value;
+                };
+            }else if(difference < 50) {
+                value = switch (stackSize) {
+                    case 1 -> 60;
+                    case 2 -> 50;
+                    case 3 -> 30;
+                    case 4 -> 15;
+                    default -> value;
+                };
+            }else if(difference < 70) {
+                value = switch (stackSize) {
+                    case 1 -> 20;
+                    case 2 -> 10;
+                    case 3, 4 -> 40;
+                    default -> value;
+                };
+            }else {
+                value = switch (stackSize) {
+                    case 1 -> 0;
+                    case 2 -> 10;
+                    case 3, 4 -> 70;
+                    default -> value;
+                };
+            }
+
+        }
+
+        return value;
     }
 
     public void determineMinimum (Card card, Card aiCard) {

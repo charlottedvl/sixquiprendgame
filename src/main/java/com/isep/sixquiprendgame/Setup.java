@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -46,5 +47,6 @@ public class Setup {
             deck.remove(index);
             numberHand++;
         }
+        Collections.sort(player.getHand());
     }
 }
