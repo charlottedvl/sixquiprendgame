@@ -305,8 +305,16 @@
             <VBox prefHeight="208.0" prefWidth="390.0">
                <HBox fx:id="stack1" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                   <VBox.margin>
-                     <Insets bottom="7.0" left="50.0" right="20.0" top="2.0" />
+                     <Insets bottom="7.0" left="25.0" right="20.0" top="2.0" />
                   </VBox.margin>
+                  <Label text="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
                   <Pane fx:id="s1c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                      <HBox.margin>
                         <Insets right="0.5" />
@@ -400,8 +408,16 @@
                </HBox>
                <HBox fx:id="stack3" prefHeight="100.0" prefWidth="302.0" style="-fx-alignment: center_left;">
                   <VBox.margin>
-                     <Insets left="50.0" right="20.0" top="5.0" />
+                     <Insets left="25.0" right="20.0" top="5.0" />
                   </VBox.margin>
+                  <Label text="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
                   <Pane fx:id="s3c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3; -fx-alignment: center;">
                      <HBox.margin>
                         <Insets right="0.5" />
@@ -500,7 +516,7 @@
                </HBox.margin>
                <HBox fx:id="stack2" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                   <VBox.margin>
-                     <Insets bottom="7.0" left="20.0" right="50.0" top="2.0" />
+                     <Insets bottom="7.0" left="20.0" right="25.0" top="2.0" />
                   </VBox.margin>
                   <Pane fx:id="s2c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                      <HBox.margin>
@@ -592,10 +608,18 @@
                         <Image url="@../6quiprend.png" />
                      </ImageView>
                   </Pane>
+                  <Label text="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
                </HBox>
                <HBox fx:id="stack4" prefHeight="100.0" prefWidth="308.0" style="-fx-alignment: center_left;">
                   <VBox.margin>
-                     <Insets left="20.0" right="50.0" top="5.0" />
+                     <Insets left="20.0" right="25.0" top="5.0" />
                   </VBox.margin>
                   <Pane fx:id="s4c1" maxHeight="100.0" maxWidth="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue; -fx-border-style: solid; -fx-border-radius: 3;">
                      <HBox.margin>
@@ -687,6 +711,14 @@
                         <Image url="@../6quiprend.png" />
                      </ImageView>
                   </Pane>
+                  <Label text="4">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </HBox>
             </VBox>
          </HBox>
