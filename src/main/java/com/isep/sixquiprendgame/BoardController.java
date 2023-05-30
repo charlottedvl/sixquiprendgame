@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -183,10 +185,14 @@ public class BoardController extends Controller {
 
     public void setCardNumbers (HBox deck,int number, Card card){
         Pane cardPane = (Pane) deck.getChildren().get(number);
-        Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
+        ImageView image = (ImageView) cardPane.getChildren().get(0);
+        /*Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
         cardNumberLabel.setText(Integer.toString(card.getNumber()));
         Label oxHeadNumberLabel = (Label) cardPane.getChildren().get(1);
-        oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));
+        oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));*/
+        String imageUrl = "/card/" + Integer.toString(card.getNumber()) + ".png";
+        System.out.println(imageUrl);
+        image.setImage(new Image(getClass().getResource(imageUrl).toExternalForm()));
     }
 
     public void chooseStackToTake(Player player, Card card) {
