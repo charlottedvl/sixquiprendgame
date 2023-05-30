@@ -1,8 +1,6 @@
 package com.isep.sixquiprendgame;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
@@ -12,7 +10,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +17,6 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Optional;
-import java.util.Random;
 
 
 @Getter
@@ -69,7 +65,7 @@ public class BoardController extends Controller {
         this.showCardsStack(this.getStacks().get(1).getStack(), 2);
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
         this.showCardsStack(this.getStacks().get(3).getStack(), 4);
-        this.setOxHeadNumber(player, player.getTotalOxHead());
+        this.setOxHeadNumber(player, player.getTotalOxHead()); //Pour chaque joueur
     }
 
 
@@ -78,7 +74,8 @@ public class BoardController extends Controller {
     }
     @FXML
     public void playCard(MouseEvent event) {
-        Pane clickedPane = (Pane) event.getSource();
+        ImageView clickedImage = (ImageView) event.getSource();
+        Pane clickedPane = (Pane) clickedImage.getParent();
         String id = clickedPane.getId();
         System.out.println(id);
         String newStr = id.substring(4);
@@ -87,7 +84,7 @@ public class BoardController extends Controller {
         Card aiCard = this.aiPlays();
         this.determineMinimum (card, aiCard);
         showCardHand(this.player);
-        showCardHand(this.ai);
+        //showCardHand(this.ai);
         showCardsStack(this.stacks.get(0).getStack(), 1);
         showCardsStack(this.stacks.get(1).getStack(), 2);
         showCardsStack(this.stacks.get(2).getStack(), 3);
@@ -112,7 +109,7 @@ public class BoardController extends Controller {
         }
     }
 
-    public void showCardHand(Player player) {
+    public void showCardHand(HumanPlayer player) {
         ArrayList<Card> playerCards = player.getHand();
             for (int i = 0; i < playerCards.size(); i++) {
                 setCardNumbers(hand, i, playerCards.get(i));
@@ -235,11 +232,11 @@ public class BoardController extends Controller {
 
     public Card aiPlays() { //repère
 
-        for (Card card: this.ai.getHand()){ // suppr
+        for (Card card: this.ai.getHand()){ // suppr à la fin
             System.out.println(card.getNumber() + "  -  " + evaluateCard(card));
         }
         int size = this.ai.getHand().size();
-        ArrayList<Integer> evaluation= new ArrayList<>();
+        ArrayList<Integer> evaluation = new ArrayList<>();
         for (int i=0;i<size; i++ ){
             Card card = this.ai.getHand().get(i);
             evaluation.add(evaluateCard(card));
