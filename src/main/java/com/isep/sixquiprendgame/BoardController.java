@@ -31,8 +31,6 @@ public class BoardController extends Controller {
 
     private ArrayList<Card> deck;
     @FXML
-    private Label oxHeadNumberIa;
-    @FXML
     private Label oxHeadNumber;
     @FXML
     private HBox stack1;
@@ -44,8 +42,6 @@ public class BoardController extends Controller {
     private HBox stack4;
     @FXML
     private HBox hand;
-    @FXML
-    private HBox otherHand;
     private ArrayList<Serie> stacks;
 
     public BoardController() {
@@ -74,13 +70,11 @@ public class BoardController extends Controller {
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
         this.showCardsStack(this.getStacks().get(3).getStack(), 4);
         this.setOxHeadNumber(player, player.getTotalOxHead());
-        this.setOxHeadNumber(ai, ai.getTotalOxHead());
     }
 
 
     public void setOxHeadNumber(Player player, int numberOfOxHeads) {
-        Label oxHead = (player instanceof HumanPlayer) ? oxHeadNumber : oxHeadNumberIa;
-        oxHead.setText(Integer.toString(numberOfOxHeads));
+        oxHeadNumber.setText(Integer.toString(numberOfOxHeads));
     }
     @FXML
     public void playCard(MouseEvent event) {
@@ -119,15 +113,12 @@ public class BoardController extends Controller {
     }
 
     public void showCardHand(Player player) {
-        HBox handContainer = (player instanceof HumanPlayer) ? hand : otherHand;
         ArrayList<Card> playerCards = player.getHand();
-        if (handContainer == hand) {
             for (int i = 0; i < playerCards.size(); i++) {
-                setCardNumbers(handContainer, i, playerCards.get(i));
+                setCardNumbers(hand, i, playerCards.get(i));
             }
-        }
         for (int i = playerCards.size(); i < 10; i++) {
-            Pane cardPane = (Pane) handContainer.getChildren().get(i);
+            Pane cardPane = (Pane) hand.getChildren().get(i);
             cardPane.setVisible(false);
             cardPane.setManaged(false);
         }
@@ -220,7 +211,9 @@ public class BoardController extends Controller {
     public void takeCardFromStack (Player player, Serie serie, Card card) {
         if (serie != null) {
             player.setTotalOxHead(getPlayer().getTotalOxHead() + serie.getTotalHead());
-            setOxHeadNumber(player, player.getTotalOxHead());
+            if (player instanceof HumanPlayer){
+                setOxHeadNumber(player, player.getTotalOxHead());
+            }
             serie.getStack().clear();
             serie.setLastCard(card);
             serie.getStack().add(card);
