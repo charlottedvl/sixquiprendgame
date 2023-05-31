@@ -23,8 +23,7 @@ public class HelloController extends Controller {
     @FXML
     protected void handleButtonAction() {
         String name = nameField.getText();
-        HumanPlayer player = new HumanPlayer(name);
-        AiPlayer ai = new AiPlayer();
+        this.player.setName(name);
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
         Controller controller = Controller.load("/views/Board.fxml", stage, player, ai);
     }

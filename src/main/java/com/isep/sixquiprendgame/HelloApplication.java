@@ -16,8 +16,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         playMusic();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/views/hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/views/Rules.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 900, 500);
         stage.setTitle("Six Qui Prend !");
         stage.setScene(scene);
         stage.show();
