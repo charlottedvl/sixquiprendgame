@@ -16,7 +16,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Les cartes d’une série doivent toujours sesuccéder dans l’ordre croissant de leurs valeurs">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Les cartes d’une série doivent toujours se succéder dans l’ordre croissant de leurs valeurs">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -26,7 +26,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Une carte doit toujours être déposée dans la sérieoù la différence entre la dernière carte déposée etla nouvelle est la plus faible">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Une carte doit toujours être déposée dans la série où la différence entre la dernière carte déposée et la nouvelle est la plus faible">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -55,7 +55,7 @@
                      <font>
                         <Font size="16.0" />
                      </font></Label>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Le joueur qui joue une carte si faible qu’elle nepeut aller dans aucune des séries doit ramasser toutes les cartes d’une série de son choix" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Le joueur qui joue une carte si faible qu’elle ne peut aller dans aucune des séries doit ramasser toutes les cartes d’une série de son choix" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Sacarte &quot;faible&quot; représente alors la première carted’une nouvelle série">
                      <VBox.margin>
                         <Insets bottom="20.0" />

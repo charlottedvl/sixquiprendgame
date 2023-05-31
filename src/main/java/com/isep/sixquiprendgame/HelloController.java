@@ -31,7 +31,7 @@ public class HelloController extends Controller {
         System.out.println(aiPlayerNumber);
         AiPlayer[]  aiPlayers = new AiPlayer[aiPlayerNumber];
         for (int i = 0; i < aiPlayerNumber; i++) {
-            aiPlayers[i] = new AiPlayer("Player"+String.valueOf(i+1));
+            aiPlayers[i] = new AiPlayer("Joueur "+String.valueOf(i+1));
         }
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
         Controller controller = Controller.load("/views/Rules.fxml", stage, player, aiPlayers);
