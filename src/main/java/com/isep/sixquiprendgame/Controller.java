@@ -11,6 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -20,11 +21,10 @@ public abstract class Controller {
     protected VBox view;
 
     protected HumanPlayer player;
-    protected AiPlayer ai;
+    protected AiPlayer[] aiPlayers;
     protected Stage stage;
 
-
-    public static Controller load(String fxmlFile, Stage stage, HumanPlayer player, AiPlayer ai) {
+    public static Controller load(String fxmlFile, Stage stage, HumanPlayer player, AiPlayer[] aiPlayers) {
         Controller controller = null;
         try {
             // Chargement de la nouvelle vue
@@ -33,9 +33,9 @@ public abstract class Controller {
             VBox view = (VBox) loader.load();
             // Chercher le controller du board
             controller = loader.getController();
-            controller.showInformation(player, ai, stage);
+            controller.showInformation(player, aiPlayers, stage);
             if (controller instanceof BoardController) {
-                ((BoardController) controller).initiateGame(player, ai, stage);
+                ((BoardController) controller).initiateGame(player, aiPlayers, stage); //A faire
             } else if (controller instanceof FinalScreenController){
                 ((FinalScreenController) controller).setClassement();
             }
@@ -53,14 +53,14 @@ public abstract class Controller {
             e.printStackTrace();
         }
         controller.setPlayer(player);
-        controller.setAi(ai);
+        controller.setAiPlayers(aiPlayers);
         controller.setStage(stage);
         return controller;
     }
 
-    public void showInformation(HumanPlayer player, AiPlayer ai, Stage stage) {
+    public void showInformation(HumanPlayer player, AiPlayer[] Aiplayers, Stage stage) {
         this.player = player;
-        this.ai = ai;
+        this.aiPlayers = aiPlayers;
         this.stage = stage;
     }
 }

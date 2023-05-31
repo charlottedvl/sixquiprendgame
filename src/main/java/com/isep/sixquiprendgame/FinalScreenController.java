@@ -8,10 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FinalScreenController extends Controller {
 
@@ -30,19 +27,15 @@ public class FinalScreenController extends Controller {
 
     public void setClassement() {
         ArrayList<Player> data = new ArrayList<>();
-        this.player.setRanking(1);
-        this.ai.setRanking(2);
-        this.congratText.setText("Bravo, vous avez gagné !");
-        if (this.player.getTotalOxHead() > this.ai.getTotalOxHead()) {
-            this.ai.setRanking(1);
-            this.player.setRanking(2);
-            this.congratText.setText("Ooh, dommage ! Vous avez perdu.");
-        } else if (this.player.getTotalOxHead() == this.ai.getTotalOxHead()) {
-            this.ai.setRanking(1);
-            this.congratText.setText("Vous avez à moitié gagné... et à moitié perdu !");
+        ArrayList<Player> orderPlayer = (ArrayList<Player>) createOrderedPlayerList(player, aiPlayers);
+        for (int i =0; i<orderPlayer.size();i++) {
+            orderPlayer.get(i).setRanking(i+1);
         }
-        data.add(player);
-        data.add(ai);
+        if (player.getRanking()==1){
+            this.congratText.setText("Bravo, vous avez gagné !");
+        } else {
+            this.congratText.setText("Ooh, dommage ! Vous avez perdu.");
+        }
 
         this.playerColumn.setCellValueFactory(
                 cellData -> {
@@ -54,8 +47,22 @@ public class FinalScreenController extends Controller {
                 new PropertyValueFactory<>("totalOxHead"));
         this.rankingColumn.setCellValueFactory(
                 new PropertyValueFactory<>("ranking"));
-        this.tableView.getItems().addAll(data);
+        this.tableView.getItems().addAll(orderPlayer);
     }
 
+    public static List<Player> createOrderedPlayerList(HumanPlayer player, AiPlayer[] aiPlayers) {
+        List<Player> orderedPlayers = new ArrayList<>();
+
+        // Ajouter le HumanPlayer à la liste des joueurs
+        orderedPlayers.add(player);
+
+        // Ajouter les AiPlayers à la liste des joueurs
+        orderedPlayers.addAll(Arrays.asList(aiPlayers));
+
+        // Trier la liste des joueurs en fonction de leur oxHeadNumber
+        Collections.sort(orderedPlayers, Comparator.comparingInt(Player::getTotalOxHead));
+
+        return orderedPlayers;
+    }
 
 }
