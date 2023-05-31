@@ -26,7 +26,7 @@ public class HelloController extends Controller {
     @FXML
     protected void handleButtonAction() {
         String name = nameField.getText();
-        this.player.setName(name);
+        HumanPlayer player = new HumanPlayer(name);
         int aiPlayerNumber = (int) aiNumber.getValue();
         System.out.println(aiPlayerNumber);
         AiPlayer[]  aiPlayers = new AiPlayer[aiPlayerNumber];
@@ -34,8 +34,10 @@ public class HelloController extends Controller {
             aiPlayers[i] = new AiPlayer("Player"+String.valueOf(i));
         }
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-        Controller controller = Controller.load("/views/Board.fxml", stage, player, aiPlayers);
+        Controller controller = Controller.load("/views/Rules.fxml", stage, player, aiPlayers);
     }
+
+
 
 
 

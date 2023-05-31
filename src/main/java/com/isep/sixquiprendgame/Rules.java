@@ -10,9 +10,7 @@ public class Rules extends Controller {
     private Button changeSceneButton;
     @FXML
     protected void passRules() {
-        HumanPlayer player = new HumanPlayer("defaultName");
-        AiPlayer ai = new AiPlayer();
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-        Controller.load("/views/hello-view.fxml", stage, player, ai);    }
+        Controller.load("/views/Board.fxml", stage, player, aiPlayers);    }
 
 }
