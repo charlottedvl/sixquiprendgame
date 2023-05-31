@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -18,21 +19,29 @@ public class HelloController extends Controller {
 
     @FXML
     private TextField nameField;
+    @FXML
+    private Slider aiNumber;
 
 
     @FXML
     protected void handleButtonAction() {
         String name = nameField.getText();
         this.player.setName(name);
+        int aiPlayerNumber = (int) aiNumber.getValue();
+        System.out.println(aiPlayerNumber);
+        AiPlayer[]  aiPlayers = new AiPlayer[aiPlayerNumber];
+        for (int i = 0; i < aiPlayerNumber; i++) {
+            aiPlayers[i] = new AiPlayer("Player"+String.valueOf(i));
+        }
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-        Controller controller = Controller.load("/views/Board.fxml", stage, player, ai);
+        Controller controller = Controller.load("/views/Board.fxml", stage, player, aiPlayers);
     }
 
 
 
     @FXML
     protected void onHelloButtonMouseEntered() {
-        changeSceneButton.setText("Click me !");
+        changeSceneButton.setText("Clique ici !");
     }
     @FXML
     protected void onHelloButtonMouseExited() {

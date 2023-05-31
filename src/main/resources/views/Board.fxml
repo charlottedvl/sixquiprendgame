@@ -9,7 +9,7 @@
 <VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.BoardController">
    <BorderPane prefHeight="470.0" prefWidth="779.0" style="-fx-background-image: url('/background.jpg');">
       <top>
-         <HBox alignment="CENTER" prefHeight="75.0" prefWidth="435.0" BorderPane.alignment="CENTER">
+         <HBox fx:id="aiPlayersView" alignment="CENTER" prefHeight="75.0" prefWidth="435.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                <Insets bottom="20.0" top="10.0" />
             </BorderPane.margin>
@@ -18,9 +18,9 @@
                   <HBox.margin>
                      <Insets bottom="-0.0" right="10.0" />
                   </HBox.margin>
-                  <Label text="Player" textFill="WHITE">
+                  <Label text="Joueur 1" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -41,9 +41,9 @@
                </VBox>
                <VBox fx:id="player2" alignment="CENTER" layoutX="357.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 2" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -70,9 +70,9 @@
                </VBox>
                <VBox fx:id="player3" alignment="CENTER" layoutX="327.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 3" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -99,9 +99,9 @@
                </VBox>
                <VBox fx:id="player4" alignment="CENTER" layoutX="416.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 4" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -128,9 +128,9 @@
                </VBox>
                <VBox fx:id="player5" alignment="CENTER" layoutX="445.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 5" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -157,9 +157,9 @@
                </VBox>
                <VBox fx:id="player6" alignment="CENTER" layoutX="475.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 6" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -186,9 +186,9 @@
                </VBox>
                <VBox fx:id="player7" alignment="CENTER" layoutX="504.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 7" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -215,9 +215,9 @@
                </VBox>
                <VBox fx:id="player8" alignment="CENTER" layoutX="534.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 8" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
@@ -244,9 +244,9 @@
                </VBox>
                <VBox fx:id="player9" alignment="CENTER" layoutX="563.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                   <children>
-                     <Label text="Player" textFill="WHITE">
+                     <Label text="Joueur 9" textFill="WHITE">
                         <font>
-                           <Font size="18.0" />
+                           <Font size="15.0" />
                         </font>
                      </Label>
                      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
