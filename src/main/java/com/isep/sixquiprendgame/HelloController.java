@@ -1,16 +1,11 @@
 package com.isep.sixquiprendgame;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class HelloController extends Controller {
 
@@ -31,11 +26,13 @@ public class HelloController extends Controller {
         System.out.println(aiPlayerNumber);
         AiPlayer[]  aiPlayers = new AiPlayer[aiPlayerNumber];
         for (int i = 0; i < aiPlayerNumber; i++) {
-            aiPlayers[i] = new AiPlayer("Joueur"+String.valueOf(i+1));
+            aiPlayers[i] = new AiPlayer("Joueur "+ (i + 1));
         }
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-        Controller controller = Controller.load("/views/Board.fxml", stage, player, aiPlayers);
+        Controller controller = Controller.load("/views/Rules.fxml", stage, player, aiPlayers);
     }
+
+
 
 
 

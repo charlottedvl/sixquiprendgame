@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Stack;
 
 @Getter
 @Setter
@@ -25,10 +24,6 @@ public class Serie {
     }
 
     public boolean testNumber () {
-        boolean test = true;
-        if (this.stack.size() == 5){
-            test = false;
-        }
-        return test;
+        return this.stack.size() != 5;
     }
 }

@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.util.*;
@@ -57,7 +56,7 @@ public class FinalScreenController extends Controller {
         orderedPlayers.addAll(Arrays.asList(aiPlayers));
 
         // Trier la liste des joueurs en fonction de leur totalOxHead
-        Collections.sort(orderedPlayers, Comparator.comparingInt(Player::getTotalOxHead));
+        orderedPlayers.sort(Comparator.comparingInt(Player::getTotalOxHead));
 
         return orderedPlayers;
     }
