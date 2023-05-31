@@ -37,7 +37,7 @@ public abstract class Controller {
             if (controller instanceof BoardController) {
                 ((BoardController) controller).initiateGame(player, aiPlayers, stage); //A faire
             } else if (controller instanceof FinalScreenController){
-                ((FinalScreenController) controller).setClassement();
+                ((FinalScreenController) controller).setClassement(player, aiPlayers);
             }
             // Remplacement de la vue actuelle par la nouvelle
             Scene scene = new Scene(view);
