@@ -14,5 +14,6 @@ public class HumanPlayer extends Player {
         this.name = name;
         this.hand = new ArrayList<>();
         this.totalOxHead = 0;
+        this.ranking = 0;
     }
 }

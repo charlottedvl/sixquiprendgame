@@ -5,20 +5,43 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.*;
+import java.io.File;
 import java.io.IOException;
 
 
 public class HelloApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        playMusic();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/views/hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("Six Qui Prend !");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static void playMusic() {
+        String musicFile = "src/main/resources/musique.wav";
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(musicFile).getAbsoluteFile());
+            AudioFormat format = audioInputStream.getFormat();
+            DataLine.Info info = new DataLine.Info(Clip.class, format);
+            Clip clip = (Clip) AudioSystem.getLine(info);
+            clip.open(audioInputStream);
+
+            int loopCount = Clip.LOOP_CONTINUOUSLY;
+            clip.setLoopPoints(0, -1);
+            clip.loop(loopCount);
+
+        } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }
