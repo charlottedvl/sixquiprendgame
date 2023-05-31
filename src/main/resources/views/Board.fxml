@@ -56,229 +56,187 @@
                   </Label>
                   <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
                              rotate="12.1">
-                     <image>
-                        <Image url="@../6quiprend.png"/>
-                     </image>
                      <HBox.margin>
                         <Insets left="-5.0" right="8.0"/>
                      </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
                   </ImageView>
                </HBox>
             </VBox>
             <VBox fx:id="player3" alignment="CENTER" layoutX="327.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 3" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <Label fx:id="oxHeadNumber3" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                            prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                           <Font size="24.0"/>
-                        </font>
-                     </Label>
-                     <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                rotate="12.1">
-                        <image>
-                           <Image url="@../6quiprend.png"/>
-                        </image>
-                        <HBox.margin>
-                           <Insets left="-5.0" right="8.0"/>
-                        </HBox.margin>
-                     </ImageView>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 3" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber3" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
             <VBox fx:id="player4" alignment="CENTER" layoutX="416.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 4" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber4" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 4" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber4" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
             <VBox fx:id="player5" alignment="CENTER" layoutX="445.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 5" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber5" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 5" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber5" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
             <VBox fx:id="player6" alignment="CENTER" layoutX="475.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 6" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber6" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 6" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber6" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
             <VBox fx:id="player7" alignment="CENTER" layoutX="504.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 7" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber7" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 7" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber7" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
             <VBox fx:id="player8" alignment="CENTER" layoutX="534.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 8" textFill="WHITE">
-                     <font>
-                        <Font size="15.0"/>
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber8" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0"/>
                </HBox.margin>
-            </VBox>
-            <VBox fx:id="player9" alignment="CENTER" layoutX="563.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
-               <children>
-                  <Label text="Joueur 9" textFill="WHITE">
+               <Label text="Joueur 8" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber8" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="15.0"/>
+                        <Font size="24.0"/>
                      </font>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
-                     <children>
-                        <Label fx:id="oxHeadNumber9" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
-                               prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="24.0"/>
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
-                                   rotate="12.1">
-                           <image>
-                              <Image url="@../6quiprend.png"/>
-                           </image>
-                           <HBox.margin>
-                              <Insets left="-5.0" right="8.0"/>
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
+            </VBox>
+            <VBox fx:id="player9" alignment="CENTER" layoutX="563.0" layoutY="10.0" prefHeight="75.0" prefWidth="59.0">
                <HBox.margin>
                   <Insets left="10.0"/>
                </HBox.margin>
+               <Label text="Joueur 9" textFill="WHITE">
+                  <font>
+                     <Font size="15.0"/>
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="45.0">
+                  <Label fx:id="oxHeadNumber9" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                         prefWidth="31.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0"/>
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true"
+                             rotate="12.1">
+                     <HBox.margin>
+                        <Insets left="-5.0" right="8.0"/>
+                     </HBox.margin>
+                     <Image url="@../6quiprend.png"/>
+                  </ImageView>
+               </HBox>
             </VBox>
          </HBox>
       </top>
@@ -290,27 +248,22 @@
                </HBox.margin>
                <Pane fx:id="hand1" maxHeight="100.0" maxWidth="70.0" prefHeight="200.0" prefWidth="200.0">
                   <HBox.margin>
-                     <Insets right="0.5" />
+                     <Insets right="0.5"/>
                   </HBox.margin>
-                  <children>
-                     <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../card/1.png" />
-                        </image>
-                     </ImageView>
-                  </children>
+                  <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
+                             preserveRatio="true">
+                     <Image url="@../card/1.png"/>
+                  </ImageView>
                </Pane>
-               <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="200.0" prefWidth="200.0">
+               <Pane fx:id="hand2" layoutX="10.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="200.0"
+                     prefWidth="200.0">
                   <HBox.margin>
-                     <Insets left="0.5" right="0.5" />
+                     <Insets left="0.5" right="0.5"/>
                   </HBox.margin>
-                  <children>
-                     <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../card/1.png" />
-                        </image>
-                     </ImageView>
-                  </children>
+                  <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
+                             preserveRatio="true">
+                     <Image url="@../card/1.png"/>
+                  </ImageView>
                </Pane>
                <Pane fx:id="hand3" layoutX="150.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="100.0"
                      prefWidth="70.0">
@@ -349,9 +302,7 @@
                   </HBox.margin>
                   <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
                              preserveRatio="true">
-                     <image>
-                        <Image url="@../card/1.png"/>
-                     </image>
+                     <Image url="@../card/1.png"/>
                   </ImageView>
                </Pane>
                <Pane fx:id="hand7" layoutX="242.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="100.0"
@@ -361,9 +312,7 @@
                   </HBox.margin>
                   <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
                              preserveRatio="true">
-                     <image>
-                        <Image url="@../card/1.png"/>
-                     </image>
+                     <Image url="@../card/1.png"/>
                   </ImageView>
                </Pane>
                <Pane fx:id="hand8" layoutX="250.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="100.0"
@@ -373,9 +322,7 @@
                   </HBox.margin>
                   <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
                              preserveRatio="true">
-                     <image>
-                        <Image url="@../card/1.png"/>
-                     </image>
+                     <Image url="@../card/1.png"/>
                   </ImageView>
                </Pane>
                <Pane fx:id="hand9" layoutX="255.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="100.0"
@@ -385,9 +332,7 @@
                   </HBox.margin>
                   <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
                              preserveRatio="true">
-                     <image>
-                        <Image url="@../card/1.png"/>
-                     </image>
+                     <Image url="@../card/1.png"/>
                   </ImageView>
                </Pane>
                <Pane fx:id="hand10" layoutX="258.0" layoutY="10.0" maxHeight="100.0" maxWidth="70.0" prefHeight="100.0"
@@ -397,9 +342,7 @@
                   </HBox.margin>
                   <ImageView fitHeight="100.0" fitWidth="70.0" onMouseClicked="#playCard" pickOnBounds="true"
                              preserveRatio="true">
-                     <image>
-                        <Image url="@../card/1.png"/>
-                     </image>
+                     <Image url="@../card/1.png"/>
                   </ImageView>
                </Pane>
                <opaqueInsets>
@@ -420,9 +363,7 @@
                   <VBox.margin>
                      <Insets bottom="-10.0" right="5.0"/>
                   </VBox.margin>
-                  <image>
-                     <Image url="@../6quiprend.png"/>
-                  </image>
+                  <Image url="@../6quiprend.png"/>
                </ImageView>
             </VBox>
             <opaqueInsets>
