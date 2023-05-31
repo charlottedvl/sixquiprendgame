@@ -1,7 +1,5 @@
 package com.isep.sixquiprendgame;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
 

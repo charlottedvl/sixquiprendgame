@@ -1,10 +1,7 @@
 package com.isep.sixquiprendgame;
 
-import java.io.IOException;
 import java.util.Collections;
-import java.util.Comparator;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
@@ -15,7 +12,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -97,7 +93,7 @@ public class BoardController extends Controller {
         stacks.add(stackFour);
     }
 
-    public void initiateGame(HumanPlayer player, AiPlayer[] aiPlayers, Stage stage) {
+    public void initiateGame(HumanPlayer player, AiPlayer[] aiPlayers) {
         Setup setup = this.setup;
         ArrayList<Card> deck = this.getDeck();
         setup.distributionCard(player, deck);
@@ -110,8 +106,7 @@ public class BoardController extends Controller {
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
         this.showCardsStack(this.getStacks().get(3).getStack(), 4);
         this.setOxHeadNumber(player, player.getTotalOxHead());
-        for (int i=0; i<aiPlayers.length;i++){
-            AiPlayer ai = aiPlayers[i];
+        for (AiPlayer ai : aiPlayers) {
             this.setOxHeadNumber(ai, ai.getTotalOxHead());
         }
         for (int i = aiPlayers.length; i<9; i++){
@@ -243,12 +238,8 @@ public class BoardController extends Controller {
     public void setCardNumbers (HBox deck,int number, Card card){
         Pane cardPane = (Pane) deck.getChildren().get(number);
         ImageView image = (ImageView) cardPane.getChildren().get(0);
-        /*Label cardNumberLabel = (Label) cardPane.getChildren().get(0);
-        cardNumberLabel.setText(Integer.toString(card.getNumber()));
-        Label oxHeadNumberLabel = (Label) cardPane.getChildren().get(1);
-        oxHeadNumberLabel.setText(Integer.toString(card.getOxHead()));*/
         String imageUrl = "/card/" + card.getNumber() + ".png";
-        image.setImage(new Image(getClass().getResource(imageUrl).toExternalForm()));
+        image.setImage(new Image(Objects.requireNonNull(getClass().getResource(imageUrl)).toExternalForm()));
     }
 
     public void chooseStackToTake(Player player, Card card) {
@@ -267,7 +258,7 @@ public class BoardController extends Controller {
         // Attendre la réponse du joueur
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(selectedStack -> {
-            int stackNumber = Integer.parseInt(selectedStack.replaceAll("[\\D]", ""));
+            int stackNumber = Integer.parseInt(selectedStack.replaceAll("\\D", ""));
             Serie serie = getStackByNumberNoFXML(stackNumber);
             takeCardFromStack(player, serie, card);
         });
@@ -391,7 +382,6 @@ public class BoardController extends Controller {
         for (int i = 0; i < orderCard.size(); i++) {
             sortedIndexes.add(i);
         }
-
         sortedIndexes.sort((index1, index2) -> {
             int number1 = orderCard.get(index1).getNumber();
             int number2 = orderCard.get(index2).getNumber();
@@ -399,27 +389,14 @@ public class BoardController extends Controller {
         });
         List<Card> sortedCards = new ArrayList<>(orderCard);
         List<Player> sortedPlayers = new ArrayList<>(orderPlayer);
-
         for (int i = 0; i < sortedIndexes.size(); i++) {
             int originalIndex = sortedIndexes.get(i);
             orderCard.set(i, sortedCards.get(originalIndex));
             orderPlayer.set(i, sortedPlayers.get(originalIndex));
         }
-
         for (int i=0; i<orderPlayer.size();i++){
             this.setCardOnBoard(orderCard.get(i),orderPlayer.get(i));
         }
-        /*
-        if (card.getNumber() < aiCard.getNumber()) {
-            this.setCardOnBoard(card, this.player);
-            this.setCardOnBoard(aiCard, this.ai);
-        } else {
-            this.setCardOnBoard(aiCard, this.ai);
-            this.setCardOnBoard(card, this.player);
-        }
-        */
-
-
     }
 
     public void minimumStack(Card card, Player ai) {

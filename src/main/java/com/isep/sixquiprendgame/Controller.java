@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.awt.*;
-import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -30,12 +28,12 @@ public abstract class Controller {
             // Chargement de la nouvelle vue
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Controller.class.getResource(fxmlFile));
-            VBox view = (VBox) loader.load();
+            VBox view = loader.load();
             // Chercher le controller du board
             controller = loader.getController();
             controller.showInformation(player, aiPlayers, stage);
             if (controller instanceof BoardController) {
-                ((BoardController) controller).initiateGame(player, aiPlayers, stage); //A faire
+                ((BoardController) controller).initiateGame(player, aiPlayers);
             } else if (controller instanceof FinalScreenController){
                 ((FinalScreenController) controller).setClassement(player, aiPlayers);
             }
@@ -52,13 +50,14 @@ public abstract class Controller {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        assert controller != null;
         controller.setPlayer(player);
         controller.setAiPlayers(aiPlayers);
         controller.setStage(stage);
         return controller;
     }
 
-    public void showInformation(HumanPlayer player, AiPlayer[] Aiplayers, Stage stage) {
+    public void showInformation(HumanPlayer player, AiPlayer[] aiPlayers, Stage stage) {
         this.player = player;
         this.aiPlayers = aiPlayers;
         this.stage = stage;
