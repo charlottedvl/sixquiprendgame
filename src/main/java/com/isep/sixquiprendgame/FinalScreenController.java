@@ -32,14 +32,14 @@ public class FinalScreenController extends Controller {
         ArrayList<Player> data = new ArrayList<>();
         this.player.setRanking(1);
         this.ai.setRanking(2);
-        this.congratText.setText("Congratulation, you have win !");
+        this.congratText.setText("Bravo, vous avez gagné !");
         if (this.player.getTotalOxHead() > this.ai.getTotalOxHead()) {
             this.ai.setRanking(1);
             this.player.setRanking(2);
-            this.congratText.setText("Ooh, too bad ! The ai defeated you");
+            this.congratText.setText("Ooh, dommage ! Vous avez perdu.");
         } else if (this.player.getTotalOxHead() == this.ai.getTotalOxHead()) {
             this.ai.setRanking(1);
-            this.congratText.setText("You half win... and half loose !");
+            this.congratText.setText("Vous avez à moitié gagné... et à moitié perdu !");
         }
         data.add(player);
         data.add(ai);

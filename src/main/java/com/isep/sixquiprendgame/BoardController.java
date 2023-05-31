@@ -192,9 +192,9 @@ public class BoardController extends Controller {
 
         // Afficher une boîte de dialogue de choix pour le joueur
         ChoiceDialog<String> dialog = new ChoiceDialog<>(stackNames.get(0), stackNames);
-        dialog.setTitle("Choisir un stack");
-        dialog.setHeaderText("Sélectionnez le stack auquel vous voulez prendre la carte :");
-        dialog.setContentText("Stack :");
+        dialog.setTitle("Choisir une rangée de cartes");
+        dialog.setHeaderText("Sélectionnez la rangée de cartes à récupérer :");
+        dialog.setContentText("Rangée :");
 
         // Attendre la réponse du joueur
         Optional<String> result = dialog.showAndWait();
@@ -216,7 +216,7 @@ public class BoardController extends Controller {
             serie.getStack().add(card);
             serie.setTotalHead(card.getOxHead());
         } else {
-            System.out.println("Please enter a valid stack");
+            System.out.println("Veuillez choisir une rangée valide");
         }
     }
 
@@ -339,7 +339,7 @@ public class BoardController extends Controller {
             // Afficher une boîte de dialogue demandant au joueur s'il veut jouer une autre manche
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Fin du jeu");
-            alert.setHeaderText("La partie est terminée.");
+            alert.setHeaderText("La manche est terminée.");
             alert.setContentText("Voulez-vous jouer une autre manche ?");
 
             // Ajouter les boutons "Oui" et "Non" à la boîte de dialogue

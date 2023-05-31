@@ -33,7 +33,7 @@ public class HelloController extends Controller {
 
     @FXML
     protected void onHelloButtonMouseEntered() {
-        changeSceneButton.setText("Click me !");
+        changeSceneButton.setText("Clique ici !");
     }
     @FXML
     protected void onHelloButtonMouseExited() {
