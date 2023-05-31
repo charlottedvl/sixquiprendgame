@@ -2,11 +2,15 @@ package com.isep.sixquiprendgame;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.awt.*;
 
 @Getter
 @Setter
@@ -40,6 +44,11 @@ public abstract class Controller {
             // Afficher la nouvelle scène sur le stage
             stage.setScene(scene);
             stage.show();
+
+            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+            stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+            stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
