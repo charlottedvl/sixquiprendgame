@@ -30,7 +30,6 @@ public class Setup {
     }
 
 
-    // Fonction pour distribuer les cartes au début
     public void distributionCard(Player player, ArrayList<Card> deck){
         int numberHand = 0; // At first, the players don't have any card
         int index;
