@@ -5,69 +5,59 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0"
-      style="-fx-background-image: url('/background.jpg'); -fx-background-size: cover;"
-      xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.isep.sixquiprendgame.Rules">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.Rules">
    <BorderPane prefHeight="176.0" prefWidth="716.0">
       <center>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <Label text="Valeurs croissantes :" textFill="WHITE">
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Les cartes d’une série doivent toujours se succéder dans l’ordre croissant de leurs valeurs">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Les cartes d’une série doivent toujours se succéder dans l’ordre croissant de leurs valeurs">
                <VBox.margin>
-                  <Insets bottom="20.0"/>
+                  <Insets bottom="20.0" />
                </VBox.margin>
             </Text>
             <Label text="Plus petite différence :" textFill="WHITE">
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Une carte doit toujours être déposée dans la série où la différence entre la dernière carte déposée et la nouvelle est la plus faible">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Une carte doit toujours être déposée dans la série où la différence entre la dernière carte déposée et la nouvelle est la plus faible">
                <VBox.margin>
-                  <Insets bottom="20.0"/>
+                  <Insets bottom="20.0" />
                </VBox.margin>
             </Text>
             <Label text="Série terminée :" textFill="WHITE">
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Une série est terminée lorsqu’elle compte 5 cartes">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Une série est terminée lorsqu’elle compte 5 cartes">
                <VBox.margin>
-                  <Insets/>
+                  <Insets />
                </VBox.margin>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Lorsqu'une sixième carte doit y être déposée, le joueur qui joue cette carte doit ramasser les 5 cartes de la série">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorsqu'une sixième carte doit y être déposée, le joueur qui joue cette carte doit ramasser les 5 cartes de la série">
                <VBox.margin>
-                  <Insets/>
+                  <Insets />
                </VBox.margin>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Sa sixième carte forme alors le début d’une nouvelle série">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sa sixième carte forme alors le début d’une nouvelle série">
                <VBox.margin>
-                  <Insets bottom="20.0"/>
+                  <Insets bottom="20.0" />
                </VBox.margin>
             </Text>
             <Label text="Carte la plus faible :" textFill="WHITE">
                <font>
-                  <Font size="16.0"/>
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Le joueur qui joue une carte si faible qu’elle ne peut aller dans aucune des séries doit ramasser toutes les cartes d’une série de son choix"/>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text=" Sacarte &quot;faible&quot; représente alors la première carted’une nouvelle série">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Le joueur qui joue une carte si faible qu’elle ne peut aller dans aucune des séries doit ramasser toutes les cartes d’une série de son choix" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Sa carte &quot;faible&quot; représente alors la première carte d’une nouvelle série">
                <VBox.margin>
-                  <Insets bottom="20.0"/>
+                  <Insets bottom="20.0" />
                </VBox.margin>
             </Text>
          </VBox>
@@ -76,24 +66,22 @@
          <VBox alignment="CENTER" prefHeight="88.0" prefWidth="716.0" BorderPane.alignment="CENTER">
             <Label text="But du jeu :" textFill="WHITE">
                <font>
-                  <Font size="20.0"/>
+                  <Font size="20.0" />
                </font>
             </Label>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Être le joueur avec le moins de têtes de boeuf" textAlignment="CENTER">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Être le joueur avec le moins de têtes de boeuf" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets bottom="20.0"/>
+                  <Insets bottom="20.0" />
                </VBox.margin>
                <font>
-                  <Font size="15.0"/>
+                  <Font size="15.0" />
                </font>
             </Text>
          </VBox>
       </top>
       <bottom>
          <VBox alignment="CENTER" prefHeight="49.0" prefWidth="716.0" BorderPane.alignment="CENTER">
-            <Button fx:id="changeSceneButton" mnemonicParsing="false" onAction="#passRules" text="Passez"
-                    textAlignment="CENTER"/>
+            <Button fx:id="changeSceneButton" mnemonicParsing="false" onAction="#passRules" text="Passez" textAlignment="CENTER" />
          </VBox>
       </bottom>
    </BorderPane>

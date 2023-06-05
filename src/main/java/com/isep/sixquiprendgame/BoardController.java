@@ -76,6 +76,8 @@ public class BoardController extends Controller {
     private VBox player8;
     @FXML
     private VBox player9;
+    @FXML
+    private Label playerName;
     private ArrayList<Serie> stacks;
     private Object Comparator;
 
@@ -113,6 +115,7 @@ public class BoardController extends Controller {
             aiPlayersView.getChildren().get(i).setVisible(false);
             aiPlayersView.getChildren().get(i).setManaged(false);
         }
+        playerName.setText(player.getName());
     }
 
 
@@ -145,7 +148,6 @@ public class BoardController extends Controller {
         Card[] aiCards = new Card[aiPlayers.length];
         for (int i = 0; i<aiCards.length; i++) {
             aiCards[i] = aiPlays(aiPlayers[i]);
-            System.out.println(aiCards[i]);
         }
         this.determineMinimum (card, aiCards);
         showCardHand(this.player);
@@ -246,7 +248,7 @@ public class BoardController extends Controller {
         // Créer une liste des noms des stacks disponibles
         ArrayList<String> stackNames = new ArrayList<>();
         for (int i = 0; i < stacks.size(); i++) {
-            stackNames.add("Stack " + (i + 1));
+            stackNames.add("Rangée " + (i + 1));
         }
 
         // Afficher une boîte de dialogue de choix pour le joueur
@@ -266,12 +268,8 @@ public class BoardController extends Controller {
 
     public void takeCardFromStack (Player player, Serie serie, Card card) {
         if (serie != null) {
-            player.setTotalOxHead(getPlayer().getTotalOxHead() + serie.getTotalHead());
-            if (player instanceof HumanPlayer){
-                setOxHeadNumber(player, player.getTotalOxHead());
-            } else {
-                setOxHeadNumber(player,player.getTotalOxHead());
-            }
+            player.setTotalOxHead(player.getTotalOxHead() + serie.getTotalHead());
+            setOxHeadNumber(player, player.getTotalOxHead());
             serie.getStack().clear();
             serie.setLastCard(card);
             serie.getStack().add(card);
@@ -302,8 +300,6 @@ public class BoardController extends Controller {
         int index = evaluation.indexOf(Collections.max(evaluation));
         Card cardToPlay = ai.getHand().get(index);
         ai.getHand().remove(cardToPlay);
-
-        System.out.println("carte choisie " + cardToPlay.getNumber());
         return cardToPlay;
     }
 

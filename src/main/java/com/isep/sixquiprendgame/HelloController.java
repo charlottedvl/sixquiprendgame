@@ -23,7 +23,6 @@ public class HelloController extends Controller {
         String name = nameField.getText();
         HumanPlayer player = new HumanPlayer(name);
         int aiPlayerNumber = (int) aiNumber.getValue();
-        System.out.println(aiPlayerNumber);
         AiPlayer[]  aiPlayers = new AiPlayer[aiPlayerNumber];
         for (int i = 0; i < aiPlayerNumber; i++) {
             aiPlayers[i] = new AiPlayer("Joueur "+ (i + 1));
