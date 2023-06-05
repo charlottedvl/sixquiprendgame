@@ -268,12 +268,8 @@ public class BoardController extends Controller {
 
     public void takeCardFromStack (Player player, Serie serie, Card card) {
         if (serie != null) {
-            player.setTotalOxHead(getPlayer().getTotalOxHead() + serie.getTotalHead());
-            if (player instanceof HumanPlayer){
-                setOxHeadNumber(player, player.getTotalOxHead());
-            } else {
-                setOxHeadNumber(player,player.getTotalOxHead());
-            }
+            player.setTotalOxHead(player.getTotalOxHead() + serie.getTotalHead());
+            setOxHeadNumber(player, player.getTotalOxHead());
             serie.getStack().clear();
             serie.setLastCard(card);
             serie.getStack().add(card);
