@@ -5,17 +5,11 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 @Getter @Setter
 public class Setup {
 
-    private Board board;
-
-    public Setup(){
-        this.board = new Board();
-    }
 
     public ArrayList<Card> createCards() {
         ArrayList<Card> deck = new ArrayList<>();
@@ -36,10 +30,9 @@ public class Setup {
     }
 
 
-    // Fonction pour distribuer les cartes au début
     public void distributionCard(Player player, ArrayList<Card> deck){
         int numberHand = 0; // At first, the players don't have any card
-        int index = 0;
+        int index;
         Random random = new Random();
         while (numberHand != 10) {
             index = random.nextInt(deck.size());
