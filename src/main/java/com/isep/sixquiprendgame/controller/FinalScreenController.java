@@ -6,6 +6,7 @@ import com.isep.sixquiprendgame.Player;
 import com.isep.sixquiprendgame.controller.Controller;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +16,8 @@ import java.util.*;
 
 public class FinalScreenController extends Controller {
 
+    @FXML
+    private Button newGameButton;
     @FXML
     private TableView<Player> tableView;
     @FXML
@@ -63,5 +66,9 @@ public class FinalScreenController extends Controller {
         orderedPlayers.sort(Comparator.comparingInt(Player::getTotalOxHead));
 
         return orderedPlayers;
+    }
+
+    public void newGameButtonHandler() {
+        Controller Chacontroller = Controller.load("/views/hello-view.fxml", stage, player, aiPlayers);
     }
 }

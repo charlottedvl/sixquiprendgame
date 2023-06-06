@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.controller.BoardController">
-   <BorderPane prefHeight="470.0" prefWidth="779.0" style="-fx-background-image: url('/background.jpg');">
+<VBox alignment="CENTER" minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" style="-fx-background-image: url('/background.jpg');" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.controller.BoardController">
+   <BorderPane prefHeight="470.0" prefWidth="779.0">
       <top>
          <HBox fx:id="aiPlayersView" alignment="CENTER" prefHeight="75.0" prefWidth="435.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>
@@ -327,7 +327,7 @@
                   </VBox.margin>
                   <Image url="@../6quiprend.png" />
                </ImageView>
-               <Label fx:id="playerName" text="Label" textFill="WHITE">
+               <Label fx:id="playerName" prefHeight="20.0" prefWidth="51.0" text="Label" textFill="WHITE">
                   <VBox.margin>
                      <Insets top="20.0" />
                   </VBox.margin>
@@ -345,7 +345,7 @@
          </HBox>
       </bottom>
       <center>
-         <HBox prefHeight="188.0" prefWidth="779.0" BorderPane.alignment="CENTER">
+         <HBox alignment="CENTER" prefHeight="188.0" prefWidth="779.0" BorderPane.alignment="CENTER">
             <VBox prefHeight="200.0" prefWidth="20.0">
                <HBox.margin>
                   <Insets left="5.0" right="5.0" />

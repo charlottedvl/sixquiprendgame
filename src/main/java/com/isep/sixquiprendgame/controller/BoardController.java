@@ -109,9 +109,9 @@ public class BoardController extends Controller {
         this.showCardsStack(this.getStacks().get(1).getStack(), 2);
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
         this.showCardsStack(this.getStacks().get(3).getStack(), 4);
-        this.setOxHeadNumber(player, player.getTotalOxHead());
+        this.setOxHead(player, player.getTotalOxHead());
         for (AiPlayer ai : aiPlayers) {
-            this.setOxHeadNumber(ai, ai.getTotalOxHead());
+            this.setOxHead(ai, ai.getTotalOxHead());
         }
         for (int i = aiPlayers.length; i<9; i++){
             aiPlayersView.getChildren().get(i).setVisible(false);
@@ -121,7 +121,7 @@ public class BoardController extends Controller {
     }
 
 
-    public void setOxHeadNumber(Player player, int numberOfOxHeads) {
+    public void setOxHead(Player player, int numberOfOxHeads) {
         if (player instanceof HumanPlayer) {
             oxHeadNumber.setText(Integer.toString(numberOfOxHeads));
         } else {
@@ -252,7 +252,7 @@ public class BoardController extends Controller {
     public void takeCardFromStack (Player player, Serie serie, Card card) {
         if (serie != null) {
             player.setTotalOxHead(player.getTotalOxHead() + serie.getTotalHead());
-            setOxHeadNumber(player, player.getTotalOxHead());
+            setOxHead(player, player.getTotalOxHead());
             serie.getStack().clear();
             serie.setLastCard(card);
             serie.getStack().add(card);
