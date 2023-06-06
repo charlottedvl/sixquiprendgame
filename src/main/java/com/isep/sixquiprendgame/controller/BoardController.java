@@ -1,6 +1,8 @@
-package com.isep.sixquiprendgame;
+package com.isep.sixquiprendgame.controller;
 
 import java.util.Collections;
+
+import com.isep.sixquiprendgame.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -102,7 +104,7 @@ public class BoardController extends Controller {
         for (AiPlayer ai: aiPlayers){
             setup.distributionCard(ai, deck);
         }
-        this.showCardHand(player);
+        this.showCardHand();
         this.showCardsStack(this.getStacks().get(0).getStack(), 1);
         this.showCardsStack(this.getStacks().get(1).getStack(), 2);
         this.showCardsStack(this.getStacks().get(2).getStack(), 3);
@@ -150,7 +152,7 @@ public class BoardController extends Controller {
             aiCards[i] = aiPlays(aiPlayers[i]);
         }
         this.determineMinimum (card, aiCards);
-        showCardHand(this.player);
+        showCardHand();
         showCardsStack(this.stacks.get(0).getStack(), 1);
         showCardsStack(this.stacks.get(1).getStack(), 2);
         showCardsStack(this.stacks.get(2).getStack(), 3);
@@ -175,8 +177,8 @@ public class BoardController extends Controller {
         }
     }
 
-    public void showCardHand(HumanPlayer player) {
-        ArrayList<Card> playerCards = player.getHand();
+    public void showCardHand() {
+        ArrayList<Card> playerCards = this.player.getHand();
             for (int i = 0; i < playerCards.size(); i++) {
                 setCardNumbers(hand, i, playerCards.get(i));
             }
@@ -190,7 +192,7 @@ public class BoardController extends Controller {
     @FXML
     public void setCardOnBoard(Card card, Player player) {
 
-        int indexSerie = getMinimumStack(card);
+        int indexSerie = card.getMinimumStack(this.stacks);
         if (indexSerie == -1 && player instanceof HumanPlayer) {
             chooseStackToTake(player, card);
         } else if (indexSerie == -1 && player instanceof AiPlayer){
@@ -208,23 +210,7 @@ public class BoardController extends Controller {
         this.player.getHand().remove(card);
     }
 
-    public int getMinimumStack(Card card){
-        int number = card.getNumber();
-        int indexSerie = -1;
-        int actualSerie = -1;
-        int minimumDifference = Integer.MAX_VALUE;
-        for (Serie serie : stacks){
-            actualSerie++;
-            if (number > serie.getLastCard().getNumber()){
-                int difference = Math.abs(number - serie.getLastCard().getNumber());
-                if (difference < minimumDifference) {
-                    minimumDifference = difference;
-                    indexSerie = actualSerie;
-                }
-            }
-        }
-        return indexSerie;
-    }
+
 
 
     private HBox getStackByNumber(int stackNumber) {
@@ -245,19 +231,16 @@ public class BoardController extends Controller {
     }
 
     public void chooseStackToTake(Player player, Card card) {
-        // Créer une liste des noms des stacks disponibles
         ArrayList<String> stackNames = new ArrayList<>();
         for (int i = 0; i < stacks.size(); i++) {
             stackNames.add("Rangée " + (i + 1));
         }
 
-        // Afficher une boîte de dialogue de choix pour le joueur
         ChoiceDialog<String> dialog = new ChoiceDialog<>(stackNames.get(0), stackNames);
         dialog.setTitle("Choisir une rangée de cartes");
         dialog.setHeaderText("Sélectionnez la rangée de cartes à récupérer :");
         dialog.setContentText("Rangée :");
 
-        // Attendre la réponse du joueur
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(selectedStack -> {
             int stackNumber = Integer.parseInt(selectedStack.replaceAll("\\D", ""));
@@ -305,7 +288,7 @@ public class BoardController extends Controller {
 
     public int evaluateCard(Card card) {
         int value = 0;
-        int indexSerie = getMinimumStack(card);
+        int indexSerie = card.getMinimumStack(this.stacks);
         if (indexSerie<0){
             value = - (10 + card.getNumber());
         } else {

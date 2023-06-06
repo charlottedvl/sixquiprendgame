@@ -1,5 +1,8 @@
-package com.isep.sixquiprendgame;
+package com.isep.sixquiprendgame.controller;
 
+import com.isep.sixquiprendgame.AiPlayer;
+import com.isep.sixquiprendgame.HumanPlayer;
+import com.isep.sixquiprendgame.controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;

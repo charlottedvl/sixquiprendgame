@@ -1,5 +1,7 @@
-package com.isep.sixquiprendgame;
+package com.isep.sixquiprendgame.controller;
 
+import com.isep.sixquiprendgame.AiPlayer;
+import com.isep.sixquiprendgame.HumanPlayer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;

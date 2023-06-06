@@ -16,4 +16,5 @@ public class HumanPlayer extends Player {
         this.totalOxHead = 0;
         this.ranking = 0;
     }
+
 }

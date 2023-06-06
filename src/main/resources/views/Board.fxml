@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.BoardController">
+<VBox minHeight="470.0" minWidth="750.0" prefHeight="470.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.sixquiprendgame.controller.BoardController">
    <BorderPane prefHeight="470.0" prefWidth="779.0" style="-fx-background-image: url('/background.jpg');">
       <top>
          <HBox fx:id="aiPlayersView" alignment="CENTER" prefHeight="75.0" prefWidth="435.0" BorderPane.alignment="CENTER">

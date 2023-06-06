@@ -1,5 +1,6 @@
-package com.isep.sixquiprendgame;
+package com.isep.sixquiprendgame.controller;
 
+import com.isep.sixquiprendgame.controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

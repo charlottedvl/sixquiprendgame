@@ -1,5 +1,9 @@
-package com.isep.sixquiprendgame;
+package com.isep.sixquiprendgame.controller;
 
+import com.isep.sixquiprendgame.AiPlayer;
+import com.isep.sixquiprendgame.HumanPlayer;
+import com.isep.sixquiprendgame.Player;
+import com.isep.sixquiprendgame.controller.Controller;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
