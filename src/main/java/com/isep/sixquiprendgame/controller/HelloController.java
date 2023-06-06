@@ -36,7 +36,7 @@ public class HelloController extends Controller {
             aiPlayers[i] = new AiPlayer("Joueur "+ (i + 1));
         }
         Stage stage = (Stage) changeSceneButton.getScene().getWindow();
-        Controller Chacontroller = Controller.load("/views/Rules.fxml", stage, player, aiPlayers);
+        Controller controller = Controller.load("/views/Rules.fxml", stage, player, aiPlayers);
     }
 
 

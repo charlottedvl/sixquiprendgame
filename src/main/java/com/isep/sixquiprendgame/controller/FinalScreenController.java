@@ -56,19 +56,13 @@ public class FinalScreenController extends Controller {
     public static ArrayList<Player> createOrderedPlayerList(HumanPlayer player, AiPlayer[] aiPlayers) {
         ArrayList<Player> orderedPlayers = new ArrayList<>();
 
-        // Ajouter le HumanPlayer à la liste des joueurs
         orderedPlayers.add(player);
-
-        // Ajouter les AiPlayers à la liste des joueurs
         orderedPlayers.addAll(Arrays.asList(aiPlayers));
-
-        // Trier la liste des joueurs en fonction de leur totalOxHead
         orderedPlayers.sort(Comparator.comparingInt(Player::getTotalOxHead));
-
         return orderedPlayers;
     }
 
     public void newGameButtonHandler() {
-        Controller Chacontroller = Controller.load("/views/hello-view.fxml", stage, player, aiPlayers);
+        Controller controller = Controller.load("/views/hello-view.fxml", stage, player, aiPlayers);
     }
 }
