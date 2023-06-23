@@ -16,7 +16,7 @@ et sélectionner le nombre d'IA qu'on souhaite affronter
 Il ne reste ensuite plus qu'à cliquer sur le bouton
 _Start Game_ afin de débuter la première manche.
 
-![Page d'accueil](medias/home.jpg)
+![Page d'accueil](medias/home.JPG)
 
 ## Rappel des règles
 Vous accédez ensuite à une page qui vous rappelle les
@@ -30,7 +30,7 @@ se termine lorsque le joueur décide de ne pas poursuivre le
 jeu avec une nouvelle manche ou lorsqu'une des joueurs
 atteint 66 têtes de boeufs.
 
-![Règles du jeu](medias/rules.jpg)
+![Règles du jeu](medias/rules.JPG)
 
 Le jeu consiste à être le joueur qui a le moins de
 têtes de boeufs en fin de partie et est composé
