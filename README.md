@@ -238,3 +238,8 @@ de têtes de boeufs à la fin de la dernière manche.
 
 ![Tableau des scores](medias/point_board.JPG)
 
+### Nouvelle partie ? 
+Sur le tableau des scores, le joueur peut décider de
+lancer une nouvelle partie. Il revient sur la page 
+d'accueil et peut alors choisir à nouveau son nom 
+et le nombre d'IA qu'il souhaite affronter.
