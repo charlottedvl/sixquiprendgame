@@ -272,8 +272,7 @@ public class BoardController extends Controller {
         };
     }
 
-    public Card aiPlays(AiPlayer ai) { //repère
-
+    public Card aiPlays(AiPlayer ai) {
         int size = ai.getHand().size();
         ArrayList<Integer> evaluation = new ArrayList<>();
         for (int i=0;i<size; i++ ){
@@ -305,7 +304,7 @@ public class BoardController extends Controller {
                     case 4 -> 70;
                     default -> value;
                 };
-            } else if(difference < 15) {
+            } else if (difference < 15) {
                 value = switch (stackSize) {
                     case 1 -> 90;
                     case 2 -> 80;
@@ -313,7 +312,7 @@ public class BoardController extends Controller {
                     case 4 -> 55;
                     default -> value;
                 };
-            } else if(difference < 30) {
+            } else if (difference < 30) {
                 value = switch (stackSize) {
                     case 1 -> 80;
                     case 2 -> 70;
@@ -321,7 +320,7 @@ public class BoardController extends Controller {
                     case 4 -> 40;
                     default -> value;
                 };
-            }else if(difference < 50) {
+            } else if (difference < 50) {
                 value = switch (stackSize) {
                     case 1 -> 60;
                     case 2 -> 50;
@@ -329,14 +328,14 @@ public class BoardController extends Controller {
                     case 4 -> 15;
                     default -> value;
                 };
-            }else if(difference < 70) {
+            } else if (difference < 70) {
                 value = switch (stackSize) {
                     case 1 -> 20;
                     case 2 -> 10;
                     case 3, 4 -> 40;
                     default -> value;
                 };
-            }else {
+            } else {
                 value = switch (stackSize) {
                     case 1 -> 0;
                     case 2 -> 10;
@@ -344,9 +343,7 @@ public class BoardController extends Controller {
                     default -> value;
                 };
             }
-
         }
-
         return value;
     }
 
